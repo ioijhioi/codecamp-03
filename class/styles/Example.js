@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 export const MyDiv = styled.div`
     width: 500px;
     height: 500px;
-    background-color: red;
+    background-color: white;
 `
 export const Title = styled.h1`
     color: blue;
