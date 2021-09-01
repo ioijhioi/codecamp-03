@@ -47,6 +47,9 @@ export default function BoardsNewPage() {
   
   function onChangeWriter(event){
     setWriter(event.target.value)
+    if(event.target.value !== ""){
+      setWriterError("")
+    }
   }
 
   function onChangePassword(event){
