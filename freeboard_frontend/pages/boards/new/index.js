@@ -1,3 +1,7 @@
+import { gql, useMutation} from '@apollo/client'
+
+
+
 import { useState } from 'react';
 import {
     Address,
@@ -25,19 +29,29 @@ import {
   ErrorMessage,
 } from "../../../styles/BoardsNew";
 
+const CREATE_BOARD = gql`    
+    mutation createBoard($createBoardInput: CreateBoardInput!) {
+        createBoard(createBoardInput : $createBoardInput)
+        {
+          _id
+        }
+    }
+`
+
 export default function BoardsNewPage() {
   
-  const [writer, setWriter] = useState ("")
-  const [writerError, setWriterError] = useState ("")
+  const [createBoard] = useMutation(CREATE_BOARD)
+  const [mywriter, setWriter] = useState ("")
+  const [mywriterError, setWriterError] = useState ("")
 
-  const [password, setPassword] = useState ("")
-  const [passwordError, setPasswordError] = useState ("")
+  const [mypassword, setPassword] = useState ("")
+  const [mypasswordError, setPasswordError] = useState ("")
 
-  const [title, setTitle] = useState ("")
-  const [titleError, setTitleError] = useState("")
+  const [mytitle, setTitle] = useState ("")
+  const [mytitleError, setTitleError] = useState("")
 
-  const [content, setContent ] = useState ("")
-  const [contentError, setContentError] = useState ("")
+  const [mycontents, setContent ] = useState ("")
+  const [mycontentError, setContentError] = useState ("")
 
   // const [zipcode, setZipcdoe] = useState ("")
   // const [zipcodeError, setZipcodeError] = useState ("")
@@ -54,14 +68,23 @@ export default function BoardsNewPage() {
 
   function onChangePassword(event){
     setPassword(event.target.value)
+    if(event. target. value !==""){
+      setPasswordError("")
+    }
   }
 
   function onChangeTitle(event){
     setTitle(event.target.value)
+    if(event.target.value !== ""){
+      setTitleError("")
+    }
   }
 
   function onChangeContent(event){
     setContent(event.target.value)
+    if(event.target.value !== ""){
+      setContentError("")
+    }
   }
 
   // function onChangeZipcode(event){
@@ -73,22 +96,26 @@ export default function BoardsNewPage() {
   // }
 
 
-  function onClickSignup(){
+  async function onClickSignup(){
 
-    if(writer ===("")){
+    if(mywriter ===("")){
       setWriterError("이름이 없습니다")
     }
 
-    if(password === ("")){
+    if(mypassword === ("")){
       setPasswordError("비밀번호가 없습니다")
     }
 
-    if(title === ("")){
+    if(mytitle === ("")){
       setTitleError("제목이 없습니다")
     }
 
-    if(content === ("")){
+    if(mycontents === ("")){
       setContentError("내용이 없습니다")
+    }
+
+    if(mywriter !== "" && mypassword !== "" && mytitle !== "" &&mycontents !== ""){
+      alert('게시물을 등록합니다')
     }
 
     // if(zipcode === ("")){
@@ -100,6 +127,19 @@ export default function BoardsNewPage() {
     // //   setYoutubeError("링크가 없습니다")
 
     // }
+    const result = await createBoard({
+      variables: {
+        createBoardInput: {
+          writer: mywriter,
+          password: mypassword,
+          title: mytitle,
+          contents: mycontents,
+          // youtubeUrl: myyoutube       
+        }
+      }
+    })
+    console.log(result.data.createBoard._id)
+  
   }
   
   
@@ -110,8 +150,8 @@ export default function BoardsNewPage() {
       <WriterWrapper>
         <InputWrapper>
           <Label>작성자</Label>
-          <Writer name="writer" type="text" placeholder="이름을 적어주세요." onChange={onChangeWriter} />
-            <ErrorMessage>{writerError}</ErrorMessage>
+          <Writer name="mywriter" type="text" placeholder="이름을 적어주세요." onChange={onChangeWriter} />
+            <ErrorMessage>{mywriterError}</ErrorMessage>
         </InputWrapper>
         <InputWrapper>
           <Label>비밀번호</Label>
@@ -119,20 +159,20 @@ export default function BoardsNewPage() {
             name="password"
             type="password"
             placeholder="비밀번호를 입력해주세요."onChange={onChangePassword} />
-              <ErrorMessage>{passwordError}</ErrorMessage>
+              <ErrorMessage>{mypasswordError}</ErrorMessage>
           
         </InputWrapper>
       </WriterWrapper>
       <InputWrapper>
         <Label>제목</Label>
-        <Subject name="title" type="text" placeholder="제목을 작성해주세요." onChange={onChangeTitle} />
-          <ErrorMessage>{titleError}</ErrorMessage>
+        <Subject name="mytitle" type="text" placeholder="제목을 작성해주세요." onChange={onChangeTitle} />
+          <ErrorMessage>{mytitleError}</ErrorMessage>
         
       </InputWrapper>
       <InputWrapper>
         <Label>내용</Label>
-        <Contents name="contents" placeholder="내용을 작성해주세요." onChange={onChangeContent} />
-          <ErrorMessage>{contentError}</ErrorMessage>
+        <Contents name="mycontents" placeholder="내용을 작성해주세요." onChange={onChangeContent} />
+          <ErrorMessage>{mycontentError}</ErrorMessage>
       </InputWrapper>
       <InputWrapper>
         <Label>주소</Label>
@@ -146,7 +186,7 @@ export default function BoardsNewPage() {
       </InputWrapper>
       <InputWrapper>
         <Label>유튜브</Label>
-        <Youtube name="youtube" placeholder="링크를 복사해주세요."  />
+        <Youtube name="myyoutube" placeholder="링크를 복사해주세요."  />
           {/* <ErrorMessage>{youtubeError}</ErrorMessage> */}
       </InputWrapper>
       <ImageWrapper>

@@ -12,6 +12,7 @@ const CREATE_BOARD = gql`
 
 
 
+
 export default function GraphqlMutationBoard3Page(){
     const [createBoard] = useMutation(CREATE_BOARD)
     const [myWriter, setMyWriter] = useState("")
