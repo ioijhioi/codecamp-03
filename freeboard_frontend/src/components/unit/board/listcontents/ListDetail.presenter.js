@@ -4,8 +4,10 @@ import {
     Top_Wrapper,
     Top_Header,
     Top_Body,
+    BestBox,
     Botton_Wrapper,
     Botton_Header,
+    Input_Botton_Wrapper,
     Search,
     Botton_Body,
     Information,
@@ -27,7 +29,9 @@ export default function ListDetailUI(props){
                     베스트 게시글
                 </Top_Header>
                 <Top_Body>
-                    <div></div>
+                    <BestBox>
+                        tkdwk
+                    </BestBox>
                     <div></div>
                     <div></div>
                     <div></div>
@@ -35,9 +39,14 @@ export default function ListDetailUI(props){
             </Top_Wrapper>
             <Botton_Wrapper>
                 <Botton_Header>
-                    <Search>
-
+                    <Input_Botton_Wrapper>
+                    <Search 
+                        name="title"
+                        type="text" 
+                        placeholder="제목을 검색해주세요">
                     </Search>
+                    </Input_Botton_Wrapper>
+
                 </Botton_Header>
                 <Botton_Body>
                     <Information>
