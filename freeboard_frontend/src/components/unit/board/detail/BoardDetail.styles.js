@@ -96,3 +96,17 @@ export const Contents = styled.div`
     padding-top: 40px;
     padding-bottom: 120px;
 `
+
+export const Button = styled.button`
+    width: 179px;
+    height: 45px;
+    background-color: white;
+    border: 1px solid gray;
+    margin: 0px 12px;
+    cursor: pointer;
+
+    :hover {
+        background-color: gold;
+        border-color: white;
+    }
+`;

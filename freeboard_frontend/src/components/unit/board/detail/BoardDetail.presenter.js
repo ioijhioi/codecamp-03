@@ -13,6 +13,7 @@ import {
     Body_Images,
     Contents,
     Wrapper1_Foot,
+    Button,
 
 
 } from "./BoardDetail.styles";
@@ -43,8 +44,9 @@ export default function BoardDetailUI(props) {
                     
                 </Wrapper1_Body>
                 <Wrapper1_Foot>
-                    <div>유튜브 링크입니다</div>
-                    <div>좋아요,싫어요</div>
+                    <Button onClick={props.onClickMoveToList}>목록으로</Button>
+                    <Button onClick={props.onClickMoveToEdit}>수정하기</Button>
+                    <Button onClick={props.onClickDelete}>삭제하기</Button>
                 </Wrapper1_Foot>
             </Wrapper1>
 

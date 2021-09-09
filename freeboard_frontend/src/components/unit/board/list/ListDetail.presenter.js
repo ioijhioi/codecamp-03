@@ -12,9 +12,13 @@ import {
     Botton_Body,
     Information,
     Contents,
+    ColumnHeaderBasic,
+    ColumnHeaderTitle,
     Row,
     Column,
     Botton_Foot,
+    PencilIcon,
+    Button,
 
 } from './ListDetail.styles'
 
@@ -53,19 +57,29 @@ export default function ListDetailUI(props){
 
                     </Information>
                     <Contents>
+                        <Row>
+                            <ColumnHeaderBasic>번호</ColumnHeaderBasic>
+                            <ColumnHeaderTitle>제목</ColumnHeaderTitle>
+                            <ColumnHeaderBasic>작성자</ColumnHeaderBasic>
+                            <ColumnHeaderBasic>날짜</ColumnHeaderBasic>
+                        </Row>
                         {props.data?.fetchBoards.map((el, index) =>(
                             <Row key={el._id} >
-                                <Column>{index}</Column>
-                                <Column>{el.title}</Column>
-                                <Column>{el.writer}</Column>
-                                <Column>{el.createAt}</Column>
+                                <ColumnHeaderBasic>{10 - index}</ColumnHeaderBasic>
+                                <ColumnHeaderTitle id={el._id} onClick={props.onClickMoveToBoardDetail}>
+                                {el.title}</ColumnHeaderTitle>
+                                <ColumnHeaderBasic>{el.writer}</ColumnHeaderBasic>
+                                <ColumnHeaderBasic>{el.createdAt}</ColumnHeaderBasic>
                             
                             </Row>
                         ))}
                     </Contents>
                 </Botton_Body>
                 <Botton_Foot>
-
+                <Button onClick={props.onClickMoveToBoardNew}>
+                    <PencilIcon src="/images/board/list/write.png" />
+                    게시물 등록하기
+                    </Button>        
                 </Botton_Foot>
             </Botton_Wrapper>
         </Wrapper>

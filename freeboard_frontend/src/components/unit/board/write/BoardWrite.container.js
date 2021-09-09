@@ -2,14 +2,15 @@ import { useMutation} from '@apollo/client'
 import { useRouter} from 'next/router'
 import { useState } from 'react'
 import BoardWriteUI from './BoardWrite.presenter'
-import { CREATE_BOARD } from "./BoardWrite.queries"
+import { CREATE_BOARD, UPDATE_BOARD } from "./BoardWrite.queries"
 
-export default function BoardsNewPage() {
+export default function BoardsNewPage(props) {
     const router = useRouter ()
     const [isActive, setIsActive] = useState(false)
 
     
     const [createBoard] = useMutation(CREATE_BOARD)
+    const [updateBoard] = useMutation(UPDATE_BOARD)
     
     const [writer, setWriter] = useState ("")
     const [mywriterError, setWriterError] = useState ("")
@@ -135,11 +136,30 @@ export default function BoardsNewPage() {
 
             console.log(result.data.createBoard._id)
             console.log(result)
-            router.push(`/boards/read/${result.data.createBoard._id}`)
+            router.push(`/boards/${result.data.createBoard._id}`)
             alert('게시물을 등록합니다')
         }  catch(error){
                 console.log("error")      
             }
+        }
+    }
+
+    async function onClickUpdate(){
+        try {
+            const result = await updateBoard({
+            variables: {
+                boardId: router.query.boardId,
+                password: password,
+                updateBoardInput: {
+                title: title,
+                contents: contents,
+            },
+            },
+        });
+            router.push(`/boards/${result.data.updateBoard._id}`)
+        } catch(error){ 
+          // console.log(error)
+            alert(err.message)
         }
     }
 
@@ -155,6 +175,9 @@ export default function BoardsNewPage() {
             mypasswordError={mypasswordError}
             mytitleError={mytitleError}
             mycontentError={mycontentError}
+
+            isEdit={props.isEdit}
+            onClickUpdate={onClickUpdate}
         />
     )
 }

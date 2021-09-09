@@ -108,8 +108,17 @@ export default function BoardWriteUI(props){
         </OptionWrapper>
         <ButtonWrapper>
             <CancelButton>취소하기</CancelButton>
-            <SubmitButton 
-                onClick={props.onClickSignup} isActive={props.isActive} >등록하기</SubmitButton>
+            {!props.isEdit && (
+                <SubmitButton 
+                    onClick={props.onClickSignup} isActive={props.isActive} disabled={!props.isActive} >
+                    등록하기
+                </SubmitButton>
+            )}
+            {props.isEdit && (
+                <SubmitButton onClick={props.onClickUpdate} isActive={true}>
+                    수정하기
+                </SubmitButton>
+            )}
         </ButtonWrapper>
         </Wrapper>
     );
