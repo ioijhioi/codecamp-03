@@ -20,6 +20,9 @@ function solution(s) {
         ? s[half -1] + s[half]
         : s[half]
     
+}
+// function solution(s) {
+//      const half = Math.floor(s.length / 2);    
 //     if( s.length % 2 === 0){
         
 //         return s[half -1] s[half]
@@ -28,4 +31,4 @@ function solution(s) {
     
 //         return s[half];
 //     }
-}
+// }

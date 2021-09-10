@@ -17,10 +17,8 @@
 // function solution(x, n) {
 //     let answer = [];
     
-//     for( let i =1; i<= n; i ++){
+//     for( let i = 1; i <= n; i++ ) {
 //         answer.push(i * x);
-//         // console.log(i * x)
-        
 //     }
     
 //     return answer;
@@ -30,12 +28,9 @@
 
 // function solution(x, n) {
     
-//     const array = new Array(n)
-//                     .fill(x)
-//                     .map((number, index) =>{
-                        // console.log(number, index)
-                    //     return number * ( index + 1)
-                    // })
-    // console.log(array)
-//     return array;    
+//     return new Array(n)
+//                .fill(x)
+//                .map( ( number, index ) => {
+//                     return number * ( index + 1 )
+//                 })
 // }

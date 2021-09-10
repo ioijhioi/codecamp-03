@@ -9,12 +9,11 @@
 // 배열 arr의 크기 : 1,000,000 이하의 자연수
 // 배열 arr의 원소의 크기 : 0보다 크거나 같고 9보다 작거나 같은 정수
 
-function  solution(arr) {
+function solution(arr) {
     let answer = [];
     
-    for( let i = 0; i < arr.length; i =i +1){
-        console.log(arr[i])
-        if(arr[i], arr[ i + 1]){
+    for( let i = 0; i < arr.length; i = i + 1 ) {
+        if(arr[i] !== arr[i + 1]) {
             answer.push(arr[i]);
         }
     }

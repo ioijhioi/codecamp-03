@@ -8,10 +8,10 @@
 // };
 
 
-const school = {
-	name: "다람쥐초등학교",
-	teacher: "다람이",
-}
+// const school = {
+// 	name: "다람쥐초등학교",
+// 	teacher: "다람이",
+// }
 
 
 

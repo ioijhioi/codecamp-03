@@ -5,6 +5,5 @@
 // fruits[1].
 
 
-for (let i=0; i<2;i++) {
-	console.log(fruits[i]) 
-}
+fruits[0] = "맛있는 " + fruits[0]
+fruits[1] = "맛있는 " + fruits[1]
