@@ -12,6 +12,17 @@
 // 4	3	[4,8,12]
 // -4	2	[-4, -8]
 
+//문제풀이2
+
+// function solution(x, n) {
+    
+//     return new Array(n)
+//                .fill(x)
+//                .map( ( number, index ) => {
+//                     return number * ( index + 1 )
+//                 })
+// }
+
 
 //문제풀이
 // function solution(x, n) {
@@ -22,15 +33,4 @@
 //     }
     
 //     return answer;
-// }
-
-//문제풀이2
-
-// function solution(x, n) {
-    
-//     return new Array(n)
-//                .fill(x)
-//                .map( ( number, index ) => {
-//                     return number * ( index + 1 )
-//                 })
 // }

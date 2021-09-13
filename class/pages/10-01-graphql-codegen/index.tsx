@@ -15,7 +15,6 @@ const CREATE_BOARD = gql`
   }
 `;
 //
-
 export default function DynamicBoardWrite() {
   const router = useRouter();
 
