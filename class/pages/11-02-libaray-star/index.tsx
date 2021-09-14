@@ -13,8 +13,8 @@ export default function LibraryStarPage() {
   return (
     <span>
       <Rate onChange={handleChange} value={value} />
-      {/* <Rate tooltips={desc} onChange={handleChange} value={value} /> */}
-      {/* {value ? <span className="ant-rate-text">{desc[value - 1]}</span> : ""} */}
+      {/* <Rate tooltips={desc} onChange={handleChange} value={value} />
+      {value ? <span className="ant-rate-text">{desc[value - 1]}</span> : ""} */}
     </span>
   );
 }

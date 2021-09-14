@@ -13,3 +13,37 @@
 // "try hello world"는 세 단어 "try", "hello", "world"로 구성되어 있습니다.
 // 각 단어의 짝수번째 문자를 대문자로, 홀수번째 문자를 소문자로 바꾸면 "TrY", "HeLlO", "WoRlD"입니다.
 // 따라서 "TrY HeLlO WoRlD" 를 리턴합니다.
+
+// function solution(s) {
+//     let answer = '';
+//     // 단어별로의 인덱스 값을 판단하는 변수
+//     let idx = 0;
+
+//     for( let i = 0; i < s.length; i++) {
+//         if( s[i] === " " ) {
+//             // 빈 공백일 경우
+//             idx = 0;
+//             answer += " ";
+
+//         } else {
+//             answer = answer + ( idx % 2 === 0
+//                                     ? s[i].toUpperCase() // 대문자로 변환
+//                                     : s[i].toLowerCase() // 소문자로 변환
+//                               )
+//             idx += 1;
+//         }
+//     }
+//     return answer;
+// }
+
+// function solution(s) {
+//     const answer = s.split(" ")
+//                     .map( str => {
+//                         return str.split("").map( (letter, i) => {
+//                             return i % 2 === 0
+//                                 ? letter.toUpperCase()
+//                                 : letter.toLowerCase()
+//                         }).join("")
+//                     }).join(" ")
+//     return answer;
+// }
