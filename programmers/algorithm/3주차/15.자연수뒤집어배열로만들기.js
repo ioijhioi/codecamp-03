@@ -8,3 +8,11 @@
 // 입출력 예
 // n	return
 // 12345	[5,4,3,2,1]
+
+// 정답1
+// return n.toString()
+// 				.split("")
+// 				.reverse()
+// 				.map( el => {
+// 	        return Number(el)
+//     })

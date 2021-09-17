@@ -23,3 +23,25 @@
 
 // 입출력 예#3
 // 3, 2, 6은 10으로 나누어 떨어지지 않습니다. 나누어 떨어지는 원소가 없으므로 [-1]을 리턴합니다.
+
+// 정답1
+// const answer = arr.filter( number => {
+//     return number % divisor === 0
+// }).sort( (a, b) => a - b );
+
+// return answer.length === 0 ? [-1] : answer
+
+// 정답2
+// function solution(arr, divisor) {
+//     let answer = [];
+
+//     for( let i = 0; i < arr.length; i++ ) {
+//         if( arr[i] % divisor === 0 ) {
+//             answer.push( arr[i] );
+//         }
+//     }
+
+//     return answer.length === 0
+//         ? [-1]
+//         : answer.sort( (a, b) => a - b )
+// }

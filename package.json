@@ -1,8 +1,0 @@
-{
-  "devDependencies": {
-    "lint-staged": "^11.1.2"
-  },
-  "dependencies": {
-    "husky": "4"
-  }
-}
