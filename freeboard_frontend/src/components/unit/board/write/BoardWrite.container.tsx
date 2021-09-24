@@ -3,13 +3,14 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import BoardWriteUI from "./BoardWrite.presenter";
 import { CREATE_BOARD, UPDATE_BOARD } from "./BoardWrite.queries";
+import {IMyUpdateBoardInput} from "./BoardWrite.types"
 
 export default function BoardsNewPage(props) {
   const router = useRouter();
   const [isActive, setIsActive] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const [createBoard] = useMutation(CREATE_BOARD);
-  const [updateBoard] = useMutation(UPDATE_BOARD);
+  
 
   const [writer, setWriter] = useState("");
   const [mywriterError, setWriterError] = useState("");
@@ -23,11 +24,17 @@ export default function BoardsNewPage(props) {
   const [contents, setContent] = useState("");
   const [mycontentError, setContentError] = useState("");
 
-  // const [zipcode, setZipcdoe] = useState ("")
+  const [zipcode, setZipcode] = useState ("")
   // const [zipcodeError, setZipcodeError] = useState ("")
+  const [address, setAddress] = useState("");
+  const [addressDetail, setAddressDetail] = useState("");
+  
 
-  // const [youtube, setYoutube] = useState ("")
+  const [youtubeUrl, setYoutubeUrl] = useState ("")
   // const [youtubeError, setYoutubeError] = useState ("")
+
+  const [createBoard] = useMutation(CREATE_BOARD);
+  const [updateBoard] = useMutation(UPDATE_BOARD);
 
   function onChangeWriter(event) {
     setWriter(event.target.value);
@@ -99,13 +106,24 @@ export default function BoardsNewPage(props) {
     }
   }
 
-  // function onChangeZipcode(event){
-  //   setZipcdoe(event.target.value)
-  // }
+  
 
-  // function onChangeYoutube(event){
-  //   setYoutube(event.target.value)
-  // }
+  function onChangeYoutubeUrl(event){
+    setYoutubeUrl(event.target.value)
+  }
+
+  function onClickAddressSearch() {
+    setIsOpen(true);
+  }
+  function onChangeAddressDetail(event) {
+    setAddressDetail(event.target.value);
+  }
+
+  function onCompleteAddressSearch(data: any) {
+    setAddress(data.address);
+    setZipcode(data.zonecode);
+    setIsOpen(false);
+  }
 
   async function onClickSignup() {
     if (writer === "") {
@@ -142,7 +160,12 @@ export default function BoardsNewPage(props) {
               password: password,
               title: title,
               contents: contents,
-              // youtubeUrl: myyoutube
+              youtubeUrl: youtubeUrl,
+              boardAddress: {
+                zipcode: zipcode,
+                address: address,
+                addressDetail: addressDetail,
+              },
             },
           },
         });
@@ -159,15 +182,36 @@ export default function BoardsNewPage(props) {
   }
 
   async function onClickUpdate() {
+    if (
+      !title &&
+      !contents &&
+      !youtubeUrl &&
+      !zipcode &&
+      !address &&
+      !addressDetail
+    ) {
+      alert("수정된 내용이 없습니다.");
+      return;
+    }
+    const myUpdateboardInput: IMyUpdateBoardInput = {};
+    if (title) myUpdateboardInput.title = title;
+    if (contents) myUpdateboardInput.contents = contents;
+    if (youtubeUrl) myUpdateboardInput.youtubeUrl = youtubeUrl;
+    if (zipcode || address || addressDetail) {
+      myUpdateboardInput.boardAddress = {};
+      if (zipcode) myUpdateboardInput.boardAddress.zipcode = zipcode;
+      if (address) myUpdateboardInput.boardAddress.address = address;
+      if (addressDetail)
+        myUpdateboardInput.boardAddress.addressDetail = addressDetail;
+    }
+    
+    
     try {
       const result = await updateBoard({
         variables: {
           boardId: router.query.boardId,
           password: password,
-          updateBoardInput: {
-            title: title,
-            contents: contents,
-          },
+          updateBoardInput: myUpdateboardInput,
         },
       });
       router.push(`/boards/${result.data.updateBoard._id}`);
@@ -180,6 +224,7 @@ export default function BoardsNewPage(props) {
   return (
     <BoardWriteUI
       isActive={isActive}
+      isOpen={isOpen}
       onChangeWriter={onChangeWriter}
       onChangePassword={onChangePassword}
       onChangeTitle={onChangeTitle}
@@ -190,7 +235,14 @@ export default function BoardsNewPage(props) {
       mytitleError={mytitleError}
       mycontentError={mycontentError}
       isEdit={props.isEdit}
+      onClickSignUp={onClickSignup}
       onClickUpdate={onClickUpdate}
+      onChangeYoutubeUrl={onChangeYoutubeUrl}
+      address={address}
+      zipcode={zipcode}
+      onChangeAddressDetail={onChangeAddressDetail}
+      onClickAddressSearch={onClickAddressSearch}
+      onCompleteAddressSearch={onCompleteAddressSearch}
     />
   );
 }

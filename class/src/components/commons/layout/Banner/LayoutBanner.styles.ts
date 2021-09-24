@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-  background-color: plum;
+  background-color: yellow;
   height: 300px;
   font-family: "myfont";
 `;

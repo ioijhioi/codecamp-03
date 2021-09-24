@@ -12,29 +12,29 @@ export const Wrapper = styled.div`
 `;
 
 export const Wrapper1 = styled.div`
+   border: 1px solid black;
   padding-top: 80px;
   padding-bottom: 100px;
   padding-left: 102px;
   padding-right: 102px;
-  border: solid 1px black;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
   align-items: center;
+  border: none;
+  box-shadow: 0px 0px 10px gray;
 `;
 
-export const Wrapper1_Head = styled.div`
+export const Wrapper1Head = styled.div`
   width: 100%;
-  /* height: 160px; */
-
-  border: solid 1px black;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid #bdbdbd;
+  padding-bottom: 20px;
 `;
 
-export const Head_Left = styled.div`
+export const HeadLeft = styled.div`
   /* border: 1px solid black;
     width : 498px;
     height: 60px;
@@ -65,7 +65,7 @@ export const Writer = styled.div``;
 
 export const CreatedAt = styled.div``;
 
-export const Wrapper1_Body = styled.div`
+export const Wrapper1Body = styled.div`
   width: 996px;
   height: 1200px;
   /* background-color: skyblue; */
@@ -79,9 +79,9 @@ export const Title = styled.h1`
   padding-top: 80px;
 `;
 
-export const Body_Images = styled.img``;
+export const BodyImages = styled.img``;
 
-export const Wrapper1_Foot = styled.div`
+export const Wrapper1Foot = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -145,3 +145,9 @@ export const LikeCount = styled.div`
 export const DislikeCount = styled.div`
   color: #828282;
 `;
+
+export const HeadRight = styled.div`
+  text-align: center;
+`;
+
+export const LocationIcon = styled.img``;

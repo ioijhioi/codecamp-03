@@ -1,43 +1,44 @@
 import {
   Wrapper,
-  Top_Wrapper,
-  Top_Header,
-  Top_Body,
+  TopWrapper,
+  TopHeader,
+  TopBody,
   BestBox,
-  Botton_Wrapper,
-  Botton_Header,
-  Input_Botton_Wrapper,
+  BottonWrapper,
+  BottonHeader,
+  InputBottonWrapper,
   Search,
-  Botton_Body,
+  BottonBody,
   Information,
   Contents,
   ColumnHeaderBasic,
   ColumnHeaderTitle,
   Row,
-  Botton_Foot,
+  BottonFoot,
   PencilIcon,
   Button,
 } from "./ListDetail.styles";
+import Paginations01 from "../../../commons/Paginations/01/Pagination01.container"
 
 export default function ListDetailUI(props) {
   return (
     <Wrapper>
-      <Top_Wrapper>
-        <Top_Header>베스트 게시글</Top_Header>
-        <Top_Body>
+      <TopWrapper>
+        <TopHeader>베스트 게시글</TopHeader>
+        <TopBody>
           <BestBox>tkdwk</BestBox>
           <div></div>
           <div></div>
           <div></div>
-        </Top_Body>
-      </Top_Wrapper>
-      <Botton_Wrapper>
-        <Botton_Header>
-          <Input_Botton_Wrapper>
+        </TopBody>
+      </TopWrapper>
+      <BottonWrapper>
+        <BottonHeader>
+          <InputBottonWrapper>
             <Search></Search>
-          </Input_Botton_Wrapper>
-        </Botton_Header>
-        <Botton_Body>
+          </InputBottonWrapper>
+        </BottonHeader>
+        <BottonBody>
           <Information></Information>
           <Contents>
             <Row>
@@ -60,14 +61,20 @@ export default function ListDetailUI(props) {
               </Row>
             ))}
           </Contents>
-        </Botton_Body>
-        <Botton_Foot>
+        </BottonBody>
+        <BottonFoot>
+          <Paginations01
+            refetch={props.refetch}
+            count={props.count}
+            startPage={props.startPage}
+            setStartPage={props.setStartPage}
+          />
           <Button onClick={props.onClickMoveToBoardNew}>
             <PencilIcon src="/images/board/list/write.png" />
             게시물 등록하기
           </Button>
-        </Botton_Foot>
-      </Botton_Wrapper>
+        </BottonFoot>
+      </BottonWrapper>
     </Wrapper>
   );
 }

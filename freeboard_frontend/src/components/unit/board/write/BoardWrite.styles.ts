@@ -160,30 +160,41 @@ export const CancelButton = styled.button`
   }
 `;
 
-export const SubmitButton = styled.button`
-  width: 179px;
-  height: 52px;
-  background-color: #ffd600;
-  border: none;
-  font-size: 16px;
-  font-weight: 500;
-  margin-left: 12px;
-  margin-right: 12px;
-  cursor: pointer;
-`;
+
 
 export const ErrorMessage = styled.div`
   color: red;
 `;
 
-//const [state, setState]=useState()//
+// const [state, setState]=useState()//
 
-//const [state, setState("apple")]=useState()// 이거하면
+// const [state, setState("apple")]=useState()// 이거하면
 
-//--->state("apple") 스테이트에 애플이 저장된다.
+// --->state("apple") 스테이트에 애플이 저장된다.
 
-//const [state, setState]=useState(pineapple)//
+// const [state, setState]=useState(pineapple)//
 
-//const [totken, setTokne] = useState()//
+// const [totken, setTokne] = useState()//
 
-//token은 실제 변수명, setToken은 변수를 바꿔주는 도구//
+// token은 실제 변수명, setToken은 변수를 바꿔주는 도구//
+
+interface IProps {
+  isActive: boolean;
+}
+export const SubmitButton = styled.button`
+  width: 179px;
+  height: 52px;
+  background-color: ${(props: IProps) => (props.isActive ? "yellow" : "gray")};
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  margin-left: 12px;
+  margin-right: 12px;
+  cursor: ${(props: IProps) => (props.isActive ? "pointer" : "default")};
+`;
+
+export const Error = styled.div`
+  padding-top: 10px;
+  font-size: 14px;
+  color: red;
+`;

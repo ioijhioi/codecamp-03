@@ -2,18 +2,17 @@ import { Tooltip } from "antd";
 import {
   Wrapper,
   Wrapper1,
-  Wrapper1_Head,
-  Head_Left,
+  Wrapper1Head,
+  HeadLeft,
   Images,
   Information,
   Writer,
   CreatedAt,
-  // Head_Right,
-  Wrapper1_Body,
+  Wrapper1Body,
   Title,
-  Body_Images,
+  BodyImages,
   Contents,
-  Wrapper1_Foot,
+  Wrapper1Foot,
   Button,
   Youtube,
   LikeIcon,
@@ -22,28 +21,37 @@ import {
   IconWrapper,
   LikeCount,
   DislikeCount,
+  HeadRight,
+  LocationIcon,
 } from "./BoardDetail.styles";
+
+
 
 export default function BoardDetailUI(props) {
   return (
     <Wrapper>
       <Wrapper1>
-        <Wrapper1_Head>
-          <Head_Left>
+        <Wrapper1Head>
+          <HeadLeft>
             <Images src="/images/vector.png" />
             <Information>
               <Writer>{props.data?.fetchBoard.writer}</Writer>
               <CreatedAt>{props.data?.fetchBoard.createdAt}</CreatedAt>
             </Information>
-          </Head_Left>
-          {/* <Head_Right>
-                        <div></div>
-                        <div></div>
-                    </Head_Right> */}
-        </Wrapper1_Head>
-        <Wrapper1_Body>
+          </HeadLeft>
+          <HeadRight>
+            <div></div>
+            <Tooltip
+              placement="topRight"
+              title={`${props.data?.fetchBoard.boardAddress?.address} ${props.data?.fetchBoard.boardAddress?.addressDetail}`}
+            >
+              <LocationIcon/>
+            </Tooltip>
+          </HeadRight>
+        </Wrapper1Head>
+        <Wrapper1Body>
           <Title>{props.data?.fetchBoard.title}</Title>
-          <Body_Images src="/images/image.png" />
+          <BodyImages src="/images/image.png" />
           <Contents>{props.data?.fetchBoard.contents}</Contents>
           <Youtube
             url={props.data?.fetchBoard.youtubeUrl}
@@ -60,12 +68,12 @@ export default function BoardDetailUI(props) {
               <DislikeCount>{props.data?.fetchBoard.dislikeCount}</DislikeCount>
             </IconWrapper>
           </LikeWrapper>
-        </Wrapper1_Body>
-        <Wrapper1_Foot>
+        </Wrapper1Body>
+        <Wrapper1Foot>
           <Button onClick={props.onClickMoveToList}>목록으로</Button>
           <Button onClick={props.onClickMoveToEdit}>수정하기</Button>
           <Button onClick={props.onClickDelete}>삭제하기</Button>
-        </Wrapper1_Foot>
+        </Wrapper1Foot>
       </Wrapper1>
     </Wrapper>
   );

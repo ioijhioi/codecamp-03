@@ -1,8 +1,8 @@
 import { useQuery, gql } from "@apollo/client";
 import { useRouter } from "next/router";
 import {
-  Query,
-  QueryFetchBoardArgs,
+  IQuery,
+  IQueryFetchBoardArgs,
 } from "../../../../src/commons/types/generated/types";
 import BoardWrite from "../../../../src/components/unit/board/write/BoardWrite.container";
 
@@ -13,13 +13,18 @@ const FETCH_BOARD = gql`
       title
       contents
       youtubeUrl
+      boardAddress {
+        zipcode
+        address
+        addressDetail
+      }
     }
   }
 `;
 
 export default function BoardsEditPage() {
   const router = useRouter();
-  const { data } = useQuery<Pick<Query, "fetchBoard">, QueryFetchBoardArgs>(
+  const { data } = useQuery<Pick<IQuery, "fetchBoard">, IQueryFetchBoardArgs>(
     FETCH_BOARD,
     { variables: { boardId: String(router.query.boardId) } }
   );

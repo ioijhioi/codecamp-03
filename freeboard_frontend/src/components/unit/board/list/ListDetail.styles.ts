@@ -6,16 +6,16 @@ export const Wrapper = styled.div`
   margin: 100px;
 `;
 
-export const Top_Wrapper = styled.div`
+export const TopWrapper = styled.div`
   /* background-color: red; */
 `;
-export const Top_Header = styled.div`
+export const TopHeader = styled.div`
   background-color: #14539a;
   text-align: center;
   font-size: 36px;
 `;
 
-export const Top_Body = styled.div`
+export const TopBody = styled.div`
   /* background-color: red; */
 `;
 
@@ -25,14 +25,14 @@ export const BestBox = styled.div`
   height: 257px;
 `;
 
-export const Botton_Wrapper = styled.div`
+export const BottonWrapper = styled.div`
   /* background-color: red; */
 `;
-export const Botton_Header = styled.div`
+export const BottonHeader = styled.div`
   /* background-color: red; */
 `;
 
-export const Input_Botton_Wrapper = styled.div`
+export const InputBottonWrapper = styled.div`
   width: 776px;
   height: 52px;
 `;
@@ -42,7 +42,7 @@ export const Search = styled.div`
     height: 52px; */
 `;
 
-export const Botton_Body = styled.div`
+export const BottonBody = styled.div`
   /* background-color: red; */
 `;
 
@@ -79,7 +79,7 @@ export const Row = styled.div`
 // export const Column = styled.div`
 //     background-color: white;
 // `
-export const Botton_Foot = styled.div`
+export const BottonFoot = styled.div`
   /* background-color: red; */
 `;
 

@@ -1,11 +1,19 @@
 import { useRouter } from "next/router";
 import { useQuery, useMutation } from "@apollo/client";
 import BoardDetailUI from "./BoardDetail.presenter";
-import { FETCH_BOARD, DELETE_BOARD } from "./BoardDetail.queries";
+import { 
+  FETCH_BOARD, 
+  DELETE_BOARD,
+  LIKE_BOARD,
+  DISLIKE_BOARD,
+} from "./BoardDetail.queries";
 
 export default function BoardDeatil() {
   const router = useRouter();
   const [deleteBoard] = useMutation(DELETE_BOARD);
+  const [likeBoard] = useMutation(LIKE_BOARD);
+  const [dislikeBoard] = useMutation(DISLIKE_BOARD);
+
 
   const { data } = useQuery(FETCH_BOARD, {
     variables: { boardId: router.query.boardId },
@@ -18,7 +26,7 @@ export default function BoardDeatil() {
 
   function onClickMoveToEdit() {
     router.push(`/boards/${router.query.boardId}/edit`);
-    //router.push(`/boardEdit/${router.query.boardId}/edit`) <---게시판 수정하기
+    // router.push(`/boardEdit/${router.query.boardId}/edit`) <---게시판 수정하기
   }
 
   async function onClickDelete() {
@@ -31,12 +39,32 @@ export default function BoardDeatil() {
     }
   }
 
+  function onClickLike() {
+    likeBoard({
+      variables: { boardId: router.query.boardId },
+      refetchQueries: [
+        { query: FETCH_BOARD, variables: { boardId: router.query.boardId } },
+      ],
+    });
+  }
+
+  function onClickDislike() {
+    dislikeBoard({
+      variables: { boardId: router.query.boardId },
+      refetchQueries: [
+        { query: FETCH_BOARD, variables: { boardId: router.query.boardId } },
+      ],
+    });
+  }
+
   return (
     <BoardDetailUI
       data={data}
       onClickMoveToList={onClickMoveToList}
       onClickMoveToEdit={onClickMoveToEdit}
       onClickDelete={onClickDelete}
+      onClickLike={onClickLike}
+      onClickDislike={onClickDislike}
     />
   );
 }
