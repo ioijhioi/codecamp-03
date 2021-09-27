@@ -15,8 +15,8 @@ export default function Layout(props) {
   return (
     <>
       <LayoutHeader />
-      <LayoutBanner />
       <LayoutNavigation />
+      <LayoutBanner />
       <Body>{props.children}</Body>
     </>
   );

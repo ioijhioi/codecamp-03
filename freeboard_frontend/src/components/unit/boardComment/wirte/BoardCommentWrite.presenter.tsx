@@ -8,6 +8,7 @@ import {
   BottomWrapper,
   ContentLength,
   Button,
+  CommentIcon,
 } from "./BoardCommentWrite.styles";
 
 export default function BoardCommentWriteUI(props) {
@@ -15,7 +16,7 @@ export default function BoardCommentWriteUI(props) {
     <Wrapper>
       {!props.isEdit && (
         <>
-          {/* <CommentIcon src="" /> */}
+          <CommentIcon src="/images/comment/CommentIcon.png" />
           <span>댓글</span>
         </>
       )}

@@ -4,12 +4,12 @@ import { ILayoutNavigationUIProps } from "./LayoutNavigation.types";
 export default function LayoutNavigationUI(props: ILayoutNavigationUIProps) {
   return (
     <Wrapper>
-      <MenuItem id="/maps" onClick={props.onClickMenu}>
-        나만의 지도
+      <MenuItem id="/maps" onClick={props.onClickMenu} src="/image/layout/mapslogo.png">
+        캠핑 지도
       </MenuItem>
       <>|</>
       <MenuItem id="/boards" onClick={props.onClickMenu}>
-        라이브게시판
+        자유게시판
       </MenuItem>
       <>|</>
       <MenuItem id="/markets" onClick={props.onClickMenu}>

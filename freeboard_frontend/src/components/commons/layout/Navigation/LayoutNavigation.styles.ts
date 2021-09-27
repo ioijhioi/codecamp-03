@@ -2,13 +2,14 @@ import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
   height: 64px;
-  background-color: #0099ff;
+  background-color: white;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   font-size: 20px;
-  color: whitesmoke;
+  color: black;
+  border-bottom: 1px solid #bdbdbd;
 `;
 
 export const MenuItem = styled.div`

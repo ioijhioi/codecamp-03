@@ -1,5 +1,16 @@
-import { Wrapper } from "./LayoutHeader.styles";
+import { 
+  Wrapper, 
+  Header,
+  LogoBox,
+} from "./LayoutHeader.styles";
 
 export default function LayoutHeaderUI() {
-  return <Wrapper>Code_Camp</Wrapper>;
+  return (
+    <Wrapper>
+      <Header>
+        <LogoBox src="/images/layout/ANYWHERE.png"/>
+      </Header>
+
+    </Wrapper>
+  )
 }

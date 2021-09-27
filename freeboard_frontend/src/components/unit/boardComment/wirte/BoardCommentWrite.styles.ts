@@ -53,7 +53,10 @@ export const ContentLength = styled.div`
 export const Button = styled.div`
   width: 91px;
   height: 51px;
-  background-color: black;
-  color: white;
+  background-color: yellow;
+  color: black;
   cursor: pointer;
+  box-shadow: 0px 0px 5px gray;
 `;
+
+export const CommentIcon = styled.img``

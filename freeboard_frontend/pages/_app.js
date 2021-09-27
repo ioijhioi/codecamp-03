@@ -6,8 +6,8 @@ import { Global } from "@emotion/react";
 import { globalStyles } from "../src/commons/styles/globalStyles";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import StoreBoard from "../src/components/unit/mymap"
-import './App.css'
+
+
 
 function MyApp({ Component, pageProps }) {
   const client = new ApolloClient({
@@ -23,9 +23,7 @@ function MyApp({ Component, pageProps }) {
           <Component {...pageProps} />
         </Layout>
       </ApolloProvider>
-      <div className="App">
-          <StoreBoard></StoreBoard>
-      </div>
+      
   </>
   );
 }
