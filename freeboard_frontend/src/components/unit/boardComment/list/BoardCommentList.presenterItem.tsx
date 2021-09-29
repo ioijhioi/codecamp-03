@@ -81,7 +81,7 @@ export default function BoardCommentListUIItem(props) {
       {!isEdit && (
         <ItemWrapper>
           <FlexWrapper>
-            <Avatar src="/images/avatar.png" />
+            <Avatar src="/images/comment/CommentIcon.png" />
             <MainWrapper>
               <WriterWrapper>
                 <Writer>{props.el?.writer}</Writer>
@@ -91,11 +91,11 @@ export default function BoardCommentListUIItem(props) {
             </MainWrapper>
             <OptionWrapper>
               <UpdateIcon
-                src="/images/boardComment/list/option_update_icon.png/"
+                src="/images/comment/pencil.png"
                 onClick={onClickUpdate}
               />
               <DeleteIcon
-                src="/images/boardComment/list/option_delete_icon.png/"
+                src="/images/comment/cancel.png"
                 onClick={onClickOpenDeleteModal}
               />
             </OptionWrapper>

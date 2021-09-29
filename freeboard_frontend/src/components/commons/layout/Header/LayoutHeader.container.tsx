@@ -1,4 +1,19 @@
+import { useRouter } from 'next/router';
 import LayoutHeaderUI from "./LayoutHeader.presenter";
+
+
+
 export default function LayoutHeader() {
-  return <LayoutHeaderUI />;
+  const router = useRouter();
+
+  function onClickMoveToMainPage () {
+    router.push("/boards")
+  }
+
+
+  return ( 
+    <LayoutHeaderUI 
+      onClickMoveToMainPage={onClickMoveToMainPage}
+    />
+  )
 }

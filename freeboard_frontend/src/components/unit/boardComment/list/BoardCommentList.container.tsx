@@ -18,10 +18,9 @@ export default function BoardCommentList() {
 
   function onLoadMore() {
     if (!data) return;
-
     fetchMore ({
-      variables: { page: Math.ceil(data?.fetchBoardComments.length / 10) + 1 },
-      updateQuery: (prev, { fetchMoreResult}) =>{
+      variables: { page: Math.ceil(data?.fetchBoardComments.length / 10 ) + 1, },
+      updateQuery: (prev, { fetchMoreResult }) =>{
         return {
           fetchBoardComments: [
               ...prev.fetchBoardComments,

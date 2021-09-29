@@ -18,7 +18,7 @@ import {
   PencilIcon,
   Button,
 } from "./ListDetail.styles";
-import Paginations01 from "../../../commons/Paginations/01/Pagination01.container"
+import Paginations01 from '../../../commons/Paginations/01/Pagination01.container';
 
 export default function ListDetailUI(props) {
   return (
@@ -57,7 +57,7 @@ export default function ListDetailUI(props) {
                   {el.title}
                 </ColumnHeaderTitle>
                 <ColumnHeaderBasic>{el.writer}</ColumnHeaderBasic>
-                <ColumnHeaderBasic>{el.createdAt}</ColumnHeaderBasic>
+                <ColumnHeaderBasic>{el.createdAt.slice(0, 10)}</ColumnHeaderBasic>
               </Row>
             ))}
           </Contents>

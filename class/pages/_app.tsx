@@ -1,5 +1,5 @@
 // import "../styles/globals.css";
-import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import { ApolloClient, ApolloProvider, InMemoryCache, ApolloLink } from "@apollo/client";
 import "antd/dist/antd.css";
 import Layout from "../src/components/commons/layout";
 import { Global } from "@emotion/react";
@@ -7,6 +7,7 @@ import { globalStyles } from "../src/commons/styles/globalStyles";
 import {initializeApp} from "firebase/app"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { createUploadLink } from 'apollo-upload-client'
 
 export const firebaseApp = initializeApp ({
   apiKey: "AIzaSyDXffKZN458jg79onQiV0Du8aQCRqjpoK4",
@@ -19,8 +20,14 @@ export const firebaseApp = initializeApp ({
 })
 
 function MyApp({ Component, pageProps }) {
+  
+  const uploadLink = createUploadLink ({
+    uri: "http://backend02.codebootcamp.co.kr/graphql",
+  })
+  
   const client = new ApolloClient({
-    uri: "http://backend03.codebootcamp.co.kr/graphql",
+    
+    link: ApolloLink.from([uploadLink]), 
     cache: new InMemoryCache(),
   });
 

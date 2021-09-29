@@ -1,14 +1,16 @@
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import BoardWriteUI from "./BoardWrite.presenter";
-import { CREATE_BOARD, UPDATE_BOARD } from "./BoardWrite.queries";
+import { CREATE_BOARD, UPDATE_BOARD, UPLOAD_FILE } from "./BoardWrite.queries";
 import {IMyUpdateBoardInput} from "./BoardWrite.types"
 
 export default function BoardsNewPage(props) {
   const router = useRouter();
   const [isActive, setIsActive] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [imageUrl, setImageUrl] = useState([''])
+  const fileRef = useRef<HTMLInputElement>()
 
   
 
@@ -35,6 +37,7 @@ export default function BoardsNewPage(props) {
 
   const [createBoard] = useMutation(CREATE_BOARD);
   const [updateBoard] = useMutation(UPDATE_BOARD);
+  const [uploadFile] = useMutation(UPLOAD_FILE)
 
   function onChangeWriter(event) {
     setWriter(event.target.value);
@@ -152,6 +155,7 @@ export default function BoardsNewPage(props) {
       // //   setYoutubeError("링크가 없습니다")
 
       // }
+
       try {
         const result = await createBoard({
           variables: {
@@ -166,6 +170,8 @@ export default function BoardsNewPage(props) {
                 address: address,
                 addressDetail: addressDetail,
               },
+              images: [imageUrl]
+            
             },
           },
         });
@@ -220,6 +226,33 @@ export default function BoardsNewPage(props) {
       alert(error.message);
     }
   }
+  // image파일업로드입니다.
+  async function onChangeFile(event) {
+    const myFile = event.target.files[0]
+    if(!myFile){
+      alert("파일이 없습니다")
+      return;
+    }
+    if(myFile.size > 5 * 1024 * 1024) {
+      alert("파일 용량이 너무 큽니다.(제한: 5MB)")
+      return;
+    }
+    if(!myFile.type.includes("jpeg") && !myFile.type.includes("png")){
+      alert("jpeg 또는 png만 업로드 가능합니다")
+      return;
+    }
+    const result = await uploadFile({
+      variables: {
+          file: myFile,
+      },
+  })
+  console.log(result.data.uploadFile.url)
+  setImageUrl(result.data.uploadFile.url)
+  }
+function onClickDiv (){
+  fileRef.current?.click()
+}
+
 
   return (
     <BoardWriteUI
@@ -243,6 +276,9 @@ export default function BoardsNewPage(props) {
       onChangeAddressDetail={onChangeAddressDetail}
       onClickAddressSearch={onClickAddressSearch}
       onCompleteAddressSearch={onCompleteAddressSearch}
+      onChangeFile={onChangeFile}
+      onClickDiv={onClickDiv}
+      fileRef={fileRef}
     />
   );
 }
