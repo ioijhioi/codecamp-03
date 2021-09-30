@@ -14,11 +14,13 @@ export const Wrapper = styled.div`
   padding: 0 30px;
   margin: 0 auto;
   width: 1130px;
+ 
 `;
 
 export const MenuItem = styled.div`
   margin: 0px 60px;
   cursor: pointer;
+  /* :not(:first-child) {border-left: 1px dotted olive};   예외를 주어 변동적으로 css를 먹일수 있다.*/
 
   :hover {
     color: orange;

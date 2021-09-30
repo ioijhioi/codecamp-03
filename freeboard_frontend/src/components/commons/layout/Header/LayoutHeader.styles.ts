@@ -18,10 +18,12 @@ export const Button = styled.button`
   width: 200px;
   height: 60px;
   cursor: pointer;
-  
 `
 
 export const LogoBox = styled.img`
   width: 250px;
   height: 60px;
+  display: none;
+  cursor: pointer;
+ 
 `

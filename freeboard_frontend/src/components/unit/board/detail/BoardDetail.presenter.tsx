@@ -23,6 +23,7 @@ import {
   DislikeCount,
   HeadRight,
   LocationIcon,
+  Image,
 } from "./BoardDetail.styles";
 
 
@@ -51,7 +52,13 @@ export default function BoardDetailUI(props) {
         </Wrapper1Head>
         <Wrapper1Body>
           <Title>{props.data?.fetchBoard.title}</Title>
-          <BodyImages src="/images/image.png" />
+          <BodyImages>
+            {props.data?.fetchBoard.images
+              ?.filter((el: string) => el !== "")
+              .map((el: string) => (
+                <Image key={el} src={`https://storage.googleapis.com/${el}`} />
+              ))}
+          </BodyImages>
           <Contents>{props.data?.fetchBoard.contents}</Contents>
           <Youtube
             url={props.data?.fetchBoard.youtubeUrl}

@@ -14,7 +14,7 @@ import {
   Subject,
   SubmitButton,
   Title,
-  UploadButton,
+  
   Wrapper,
   Writer,
   WriterWrapper,
@@ -25,6 +25,7 @@ import {
 } from "./BoardWrite.styles";
 import {Modal} from "antd"
 import DaumPostcode from 'react-daum-postcode';
+import Uploads01 from "../../../commons/uploads/01/Uploads01.container"
 
 export default function BoardWriteUI(props) {
   return (
@@ -111,22 +112,14 @@ export default function BoardWriteUI(props) {
         </InputWrapper>
         <ImageWrapper>
           <Label>사진첨부</Label>
-          <UploadButton onClick={props.onClickDiv}>
-            {/* <div style={{width: '50px', height: '50px', backgroundColor: "gray"}} onClick={props.onClickDiv}>이미지선택</div> */}
-          
-            {/* <img src={`https://storage.googleapis.com/${imageUrl}`} /> */}
-            <div>+</div>
-            <div>Upload</div>
-          </UploadButton>
-          <input ref={props.fileRef} style={{display: 'none'}} type ="file" onChange={props.onChangeFile} />   
-          <UploadButton>
-            <div>+</div>
-            <div>Upload</div>
-          </UploadButton>
-          <UploadButton>
-            <div>+</div>
-            <div>Upload</div>
-          </UploadButton>
+          {props.fileUrls.map((el, index) => (
+            <Uploads01
+              key={`${el}_${index}`}
+              index={index}
+              fileUrl={el}
+              onChangeFileUrls={props.onChangeFileUrls}
+            />
+          ))}
         </ImageWrapper>
         <OptionWrapper>
           <Label>메인설정</Label>

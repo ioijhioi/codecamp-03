@@ -9,8 +9,8 @@ export default function LayoutHeaderUI(props) {
   return (
     <Wrapper>
       <Header>
-        <Button onClick={props.onClickMoveToMainPage}>
-          <LogoBox src="/images/layout/ANYWHERE.png"/>
+        <Button>
+          <LogoBox src="/images/layout/ANYWHERE.png" onClick={props.onClickMoveToMainPage}/>
         </Button>
       </Header>
 

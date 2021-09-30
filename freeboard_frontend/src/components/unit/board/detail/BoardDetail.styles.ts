@@ -79,7 +79,10 @@ export const Title = styled.h1`
   padding-top: 80px;
 `;
 
-export const BodyImages = styled.img``;
+export const BodyImages = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 export const Wrapper1Foot = styled.div`
   display: flex;
@@ -151,3 +154,9 @@ export const HeadRight = styled.div`
 `;
 
 export const LocationIcon = styled.img``;
+
+export const Image = styled.img`
+  width: 996px;
+  height: 480px;
+  margin-bottom: 30px;
+`
