@@ -27,6 +27,7 @@ import {Modal} from "antd"
 import DaumPostcode from 'react-daum-postcode';
 import Uploads01 from "../../../commons/uploads/01/Uploads01.container"
 
+
 export default function BoardWriteUI(props) {
   return (
     <>
@@ -112,12 +113,11 @@ export default function BoardWriteUI(props) {
         </InputWrapper>
         <ImageWrapper>
           <Label>사진첨부</Label>
-          {props.fileUrls.map((el, index) => (
+          {new Array(3).fill(1).map((el, index) => (
             <Uploads01
               key={`${el}_${index}`}
               index={index}
-              fileUrl={el}
-              onChangeFileUrls={props.onChangeFileUrls}
+              onChangeFiles={props.onChangeFiles}
             />
           ))}
         </ImageWrapper>

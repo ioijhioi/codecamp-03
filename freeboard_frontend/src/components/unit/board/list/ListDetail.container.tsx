@@ -9,14 +9,18 @@ import {
   QueryFetchBoardsCountArgs,
 } from "../../../../commons/types/generated/types"
 
+
 export default function ListDetail() {
-  
+  const [mySearch, setMySearch] = useState("");
+  const [myKeyword, setMyKeyword] = useState("");
   const router = useRouter();
   const [startPage, setStartPage] = useState(1);
+  
+  
   const { data, refetch } = useQuery<
     Pick<Query, "fetchBoards">,
     QueryFetchBoardsArgs
-  >(FETCH_BOARDS, { variables: { page: startPage } });
+  >(FETCH_BOARDS, { variables: { page: startPage, search: mySearch } });
   const { data: dataBoardsCount } = useQuery<
     Pick<Query, "fetchBoardsCount">,
     QueryFetchBoardsCountArgs
@@ -26,8 +30,21 @@ export default function ListDetail() {
     router.push("/boards/new");
   }
 
-  function onClickMoveToBoardDetail(event) {
+  function onClickMoveToBoardDetail(event:any) {
     router.push(`/boards/${event.target.id}`);
+  }
+
+  function onChangeSearch(event:any) {
+    setMySearch(event.target.value);
+  }
+
+  function onClickSearch() {
+    refetch({ search: mySearch, page: 1 });
+    setMyKeyword(mySearch);
+  }
+
+  function onClickPage(event:any) {
+    refetch({ search: myKeyword, page: Number(event.target.id) });
   }
 
   return (
@@ -39,6 +56,11 @@ export default function ListDetail() {
       startPage={startPage}
       setStartPage={setStartPage}
       count={dataBoardsCount?.fetchBoardsCount}
+      mySearch={mySearch}
+      myKeyword={myKeyword}
+      onChange={onChangeSearch}
+      onClickSearch={onClickSearch}
+      onClickPage={onClickPage}
     />
   );
 }

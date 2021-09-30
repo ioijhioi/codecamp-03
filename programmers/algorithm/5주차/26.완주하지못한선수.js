@@ -36,7 +36,11 @@
 //     for ( let i = 0; i < participant.length; i++){
 //         if( participant[i] !== completion[i]){
 //             answer = participant[i];
+            
+//             // 함수 안에서 for 문을 사용했을 때에 return을 하면
+//             // break 와 동시에 값을 반환한다.
 //             return answer;
 //         }
 //     }
 // }
+

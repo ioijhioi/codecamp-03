@@ -8,17 +8,22 @@ import {
   BottonHeader,
   InputBottonWrapper,
   Search,
+  SearchButton,
   BottonBody,
-  Information,
+  // Information,
   Contents,
   ColumnHeaderBasic,
   ColumnHeaderTitle,
+  // Page,
+  Myword,
   Row,
   BottonFoot,
   PencilIcon,
   Button,
 } from "./ListDetail.styles";
 import Paginations01 from '../../../commons/Paginations/01/Pagination01.container';
+// import Searches01 from '../../../commons/searches/01/Searches01.presenter'
+import {v4 as uuidv4} from 'uuid'
 
 export default function ListDetailUI(props) {
   return (
@@ -35,11 +40,15 @@ export default function ListDetailUI(props) {
       <BottonWrapper>
         <BottonHeader>
           <InputBottonWrapper>
-            <Search></Search>
+            <Search 
+              type="text" 
+              placeholder="🔎제목을 검색해주세요"
+              onChange={props.onChangeSearch}/>
+            <SearchButton onClick={props.onClickSearch}/>
           </InputBottonWrapper>
         </BottonHeader>
         <BottonBody>
-          <Information></Information>
+          {/* <Searches01 ></Searches01> */}
           <Contents>
             <Row>
               <ColumnHeaderBasic>번호</ColumnHeaderBasic>
@@ -54,13 +63,21 @@ export default function ListDetailUI(props) {
                   id={el._id}
                   onClick={props.onClickMoveToBoardDetail}
                 >
-                  {el.title}
+                  {el.title
+                    .replaceAll(props.myKeyword, `$#@${props.myKeyword}$#@`)
+                    .split("$#@")
+                    .map ((el) => (
+                        <Myword key={uuidv4()} isMatched={props.myKeyword === el} > 
+                            {el} 
+                        </Myword>)
+                    )}
                 </ColumnHeaderTitle>
                 <ColumnHeaderBasic>{el.writer}</ColumnHeaderBasic>
                 <ColumnHeaderBasic>{el.createdAt.slice(0, 10)}</ColumnHeaderBasic>
               </Row>
             ))}
-          </Contents>
+            
+            </Contents>
         </BottonBody>
         <BottonFoot>
           <Paginations01

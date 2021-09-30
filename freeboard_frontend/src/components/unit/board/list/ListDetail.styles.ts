@@ -35,12 +35,23 @@ export const BottonHeader = styled.div`
 export const InputBottonWrapper = styled.div`
   width: 776px;
   height: 52px;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
 `;
-export const Search = styled.div`
-  background-color: blue;
-  /* width: 776px;
-    height: 52px; */
+export const Search = styled.input`
+  background-color: #F2F2F2;
+  width: 776px;
+  height: 52px;
+  
 `;
+
+export const SearchButton = styled.div`
+  
+  padding: 14px 16px;
+  background-color: black;
+  width: 120px;
+`
 
 export const BottonBody = styled.div`
   /* background-color: red; */
@@ -64,6 +75,17 @@ export const ColumnHeaderTitle = styled.div`
   text-align: center;
 `;
 
+interface IProps {
+  isMatched: boolean;
+}
+export const Myword = styled.span`
+  color: ${((props: IProps) => (props.isMatched ? "red" : "black"))};
+`
+
+// const Page = styled.span`
+//     padding: 0px 10px;
+//     cursor: pointer;
+// `
 export const Row = styled.div`
   display: flex;
   flex-direction: row;

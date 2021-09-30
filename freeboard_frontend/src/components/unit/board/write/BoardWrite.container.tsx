@@ -2,7 +2,7 @@ import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import BoardWriteUI from "./BoardWrite.presenter";
-import { CREATE_BOARD, UPDATE_BOARD, } from "./BoardWrite.queries";
+import { CREATE_BOARD, UPDATE_BOARD, UPLOAD_FILE } from "./BoardWrite.queries";
 import {IMyUpdateBoardInput} from "./BoardWrite.types"
 
 export default function BoardsNewPage(props) {
@@ -33,10 +33,11 @@ export default function BoardsNewPage(props) {
 
   const [youtubeUrl, setYoutubeUrl] = useState ("")
   // const [youtubeError, setYoutubeError] = useState ("")
-  const [fileUrls, setFileUrls ] = useState(["", "", ""])
+  const [files, setFiles ] = useState<(File | null )[]>([null, null, null]);
 
   const [createBoard] = useMutation(CREATE_BOARD);
   const [updateBoard] = useMutation(UPDATE_BOARD);
+  const [uploadFile] = useMutation(UPLOAD_FILE)
   
 
   function onChangeWriter(event) {
@@ -157,6 +158,12 @@ export default function BoardsNewPage(props) {
       // }
 
       try {
+        const uploadFiles = files 
+          .filter((el) => el) 
+          .map((el) => uploadFile({ variables: { file: el } }));
+        const results = await Promise.all(uploadFiles);
+        const myImages = results.map((el) => el.data.uploadFile.url);
+        
         const result = await createBoard({
           variables: {
             createBoardInput: {
@@ -170,7 +177,8 @@ export default function BoardsNewPage(props) {
                 address: address,
                 addressDetail: addressDetail,
               },
-              images: [...fileUrls],
+              
+              images: myImages,
             
             },
           },
@@ -226,11 +234,15 @@ export default function BoardsNewPage(props) {
       alert(error.message);
     }
   }
-  function onChangeFileUrls (fileUrl:string, index: number){
-    const newFileUrls = [...fileUrls];
-    newFileUrls[index] = fileUrl;
-    setFileUrls(newFileUrls)
-  }
+  // function onChangeFileUrls (fileUrl:string, index: number){
+  //   const newFileUrls = [...fileUrls];
+  //   newFileUrls[index] = fileUrl;
+  //   setFileUrls(newFileUrls)
+  function onChangeFiles(file: File, index: number) {
+    const newFiles = [...files];
+    newFiles[index] = file;
+    setFiles(newFiles);
+}
   
 
 
@@ -256,8 +268,7 @@ export default function BoardsNewPage(props) {
       onChangeAddressDetail={onChangeAddressDetail}
       onClickAddressSearch={onClickAddressSearch}
       onCompleteAddressSearch={onCompleteAddressSearch}
-      onChangeFileUrls={onChangeFileUrls}
-      fileUrls={fileUrls}
+      onChangeFiles={onChangeFiles}
       
     />
   );
