@@ -10,7 +10,7 @@ export default function LayoutHeaderUI(props) {
     <Wrapper>
       <Header>
         <Button>
-          <LogoBox src="/images/layout/ANYWHERE.png" onClick={props.onClickMoveToMainPage}/>
+          <LogoBox src="/images/layout/MyPost(1).png" onClick={props.onClickMoveToMainPage}/>
         </Button>
       </Header>
 

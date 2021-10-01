@@ -16,10 +16,10 @@ export const Body = styled.div`
     flex-direction: row;
 `
 
-export const Map = styled.div`
-    width: 1200px;
-    height: 1200px;
-    background-color:blue;
+export const Map = styled.img`
+    width: 800px;
+    height: 800px;
+    
 `
 
 export const LocationList = styled.div`

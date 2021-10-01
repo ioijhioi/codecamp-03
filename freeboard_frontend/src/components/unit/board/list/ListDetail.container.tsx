@@ -58,7 +58,7 @@ export default function ListDetail() {
       count={dataBoardsCount?.fetchBoardsCount}
       mySearch={mySearch}
       myKeyword={myKeyword}
-      onChange={onChangeSearch}
+      onChangeSearch={onChangeSearch}
       onClickSearch={onClickSearch}
       onClickPage={onClickPage}
     />

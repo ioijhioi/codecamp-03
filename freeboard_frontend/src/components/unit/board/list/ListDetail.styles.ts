@@ -75,11 +75,11 @@ export const ColumnHeaderTitle = styled.div`
   text-align: center;
 `;
 
-interface IProps {
+interface Props {
   isMatched: boolean;
 }
 export const Myword = styled.span`
-  color: ${((props: IProps) => (props.isMatched ? "red" : "black"))};
+  color: ${((props: Props) => (props.isMatched ? "red" : "black"))};
 `
 
 // const Page = styled.span`

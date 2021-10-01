@@ -23,7 +23,7 @@ export const Button = styled.button`
 export const LogoBox = styled.img`
   width: 250px;
   height: 60px;
-  display: none;
+  
   cursor: pointer;
  
 `
