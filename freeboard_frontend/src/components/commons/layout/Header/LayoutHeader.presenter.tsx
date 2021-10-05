@@ -13,10 +13,10 @@ export default function LayoutHeaderUI(props) {
     <Wrapper>
       <Header>
         <Button>
-          <LogoBox id="/boards" onClick={props.onClickMoveToMainMenu}/>
+          <LogoBox onClick={props.onClickMoveToMainMenu}/>
         </Button>
       <LoginInformation>
-          <LoginButton id = "/loginUser" onClick={props.onClickMoveToMainMenu}>로그인</LoginButton>
+          <LoginButton onClick={props.onClickMoveToLoginPage}>로그인</LoginButton>
           {/* <CreateButton onClick={props.onClickMoveToMainMenu}>회원가입</CreateButton> */}
       </LoginInformation>
       </Header>

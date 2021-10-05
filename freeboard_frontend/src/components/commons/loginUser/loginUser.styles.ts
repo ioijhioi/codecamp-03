@@ -3,9 +3,9 @@ import styled from '@emotion/styled';
 export const Wrapper = styled.div`
     width: 1920px;
     height: 1080px;
-    
+    background-color: blue;
 `
-export const Header = styled.img`
+export const Header = styled.div`
     display: flex;
     
 `

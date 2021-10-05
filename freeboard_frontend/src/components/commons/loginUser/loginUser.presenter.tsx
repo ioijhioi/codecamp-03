@@ -18,7 +18,7 @@ export default function LoginUserPageUI () {
     return (
         <Wrapper>
             <Header>
-
+                로그인페이지
             </Header>
             <Body>
                 <Login>
