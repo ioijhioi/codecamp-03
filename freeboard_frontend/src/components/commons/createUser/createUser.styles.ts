@@ -75,6 +75,8 @@ export const SubmitButton = styled.button`
   box-sizing: border-box;
   border-radius: 16px;
   margin-top: 40px;
-  
-    
+`;
+
+export const ErrorMessage = styled.div`
+color: red;
 `;

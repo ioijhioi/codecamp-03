@@ -9,10 +9,11 @@ import {
     Writer,
     Password,
     SubmitButton,
+    ErrorMessage,
 
 } from "./createUser.styles"
 
-export default function CreateUserPageUI () {
+export default function CreateUserPageUI (props) {
 
     return (
         <Wrapper>
@@ -24,7 +25,9 @@ export default function CreateUserPageUI () {
                         name="myEmail"
                         type="email"
                         placeholder="이메일을 입력해주세요."
+                        onChange={props.onChangeEmail}
                     />
+                    <ErrorMessage>{props.myEmailError}</ErrorMessage>
                 </InputWrapper>
                 <InputWrapper>
                     <Label>이름</Label>
@@ -32,7 +35,9 @@ export default function CreateUserPageUI () {
                         name="myWriter"
                         type="text"
                         placeholder="이름을 입력해주세요."
+                        onChange={props.onChangeWriter}
                     />
+                    <ErrorMessage>{props.mywriterError}</ErrorMessage>
                 </InputWrapper>
                 <InputWrapper>
                     <Label>비밀번호</Label>
@@ -40,7 +45,9 @@ export default function CreateUserPageUI () {
                         name="password"
                         type="password"
                         placeholder="비밀번호를 입력해주세요."
+                        onChange={props.onChangePassword}
                     />
+                    <ErrorMessage>{props.mypasswordError}</ErrorMessage>
                 </InputWrapper>
                 <InputWrapper>
                     <Label>비밀번호 확인</Label>
@@ -48,10 +55,13 @@ export default function CreateUserPageUI () {
                         name="password"
                         type="password"
                         placeholder="비밀번호를 입력해주세요."
+                        // onChange={props.onChangePassword}
                     />
                 </InputWrapper>
-            
-                <SubmitButton>회원가입하기</SubmitButton>
+                <ErrorMessage>{props.mypasswordError}</ErrorMessage>
+                <SubmitButton onClick={props.onClickSubmit}>
+                    회원가입하기
+                </SubmitButton>
             </Body>
         </Wrapper>
     )

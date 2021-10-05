@@ -260,7 +260,6 @@ export default function BoardsNewPage(props) {
       mytitleError={mytitleError}
       mycontentError={mycontentError}
       isEdit={props.isEdit}
-      onClickSignUp={onClickSignup}
       onClickUpdate={onClickUpdate}
       onChangeYoutubeUrl={onChangeYoutubeUrl}
       address={address}
