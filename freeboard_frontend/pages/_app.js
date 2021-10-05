@@ -7,8 +7,10 @@ import { globalStyles } from "../src/commons/styles/globalStyles";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { createUploadLink} from 'apollo-upload-client'
+import { useRouter } from 'next/router';
+import HomePage from '.';
 
-
+const HIDDEN_MAIN = ["/"];
 
 function MyApp({ Component, pageProps }) {
   const uploadLink = createUploadLink ({
@@ -19,14 +21,20 @@ function MyApp({ Component, pageProps }) {
     cache: new InMemoryCache(),
   });
 
+  const router = useRouter();
+
+  const isHiddenMain = HIDDEN_MAIN.includes(router.pathname);
 
   return (
     <>
       <Global styles={globalStyles} />
       <ApolloProvider client={client}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        {isHiddenMain && <HomePage/>}
+        {!isHiddenMain &&(
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>)}
+          
       </ApolloProvider>
       
   </>

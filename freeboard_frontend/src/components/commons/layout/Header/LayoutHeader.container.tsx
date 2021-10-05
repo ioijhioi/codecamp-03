@@ -7,19 +7,23 @@ export default function LayoutHeader() {
   const router = useRouter();
 
   // function onClickMoveToMainMenu ( ) {
-  //   router.push()
+  //   router.push("")
   // }
+  
 
   function onClickMoveToLoginPage () {
     router.push("/loginUser")
   }
   
-
+  function onClickMoveToCreateUserPage (){
+    router.push("/createUser")
+  }
   
-
   return <LayoutHeaderUI
-        /* onClickMoveToMainMenu={onClickMoveToMainMenu}  */
+          // onClickMoveToMainMenu={onClickMoveToMainMenu}
           onClickMoveToLoginPage={onClickMoveToLoginPage}
+          onClickMoveToCreateUserPage={onClickMoveToCreateUserPage}
+         
         />
   
 }

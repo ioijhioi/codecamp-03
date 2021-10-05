@@ -7,7 +7,7 @@ import {
   MutationDeleteBoardCommentArgs,
 } from "../../../../commons/types/generated/types";
 
-import BoardCommentWrite from "../wirte/BoardCommentWrite.container";
+import BoardCommentWrite from "../write/BoardCommentWrite.container";
 import {
   DELETE_BOARD_COMMENT,
   FETCH_BOARD_COMMENTS,

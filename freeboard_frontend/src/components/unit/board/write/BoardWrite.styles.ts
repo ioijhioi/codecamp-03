@@ -34,7 +34,7 @@ export const Writer = styled.input`
   width: 486px;
   height: 52px;
   padding-left: 16px;
-  /* border: 1px solid #bdbdbd; */
+  border: 1px solid #bdbdbd;
 `;
 
 export const Password = styled.input`
@@ -102,7 +102,7 @@ export const Youtube = styled.input`
   width: 996px;
   height: 52px;
   padding-left: 16px;
-  /* border: 1px solid #bdbdbd; */
+  border: 1px solid #bdbdbd;
 `;
 
 export const ImageWrapper = styled.div`
@@ -118,13 +118,13 @@ export const OptionWrapper = styled.div`
 `;
 
 export const RadioButton = styled.input`
-  /* cursor: pointer; */
+  cursor: pointer;
 `;
 
 export const RadioLabel = styled.label`
   margin-left: 8px;
   margin-right: 20px;
-  /* font-weight: 500; */
+  font-weight: 500;
   cursor: pointer;
 `;
 

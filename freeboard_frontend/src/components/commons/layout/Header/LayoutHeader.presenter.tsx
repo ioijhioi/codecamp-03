@@ -5,7 +5,7 @@ import {
   LogoBox,
   LoginInformation,
   LoginButton,
-  // CreateButton,
+  CreateButton,
 } from "./LayoutHeader.styles";
 
 export default function LayoutHeaderUI(props) {
@@ -17,7 +17,7 @@ export default function LayoutHeaderUI(props) {
         </Button>
       <LoginInformation>
           <LoginButton onClick={props.onClickMoveToLoginPage}>로그인</LoginButton>
-          {/* <CreateButton onClick={props.onClickMoveToMainMenu}>회원가입</CreateButton> */}
+          <CreateButton onClick={props.onClickMoveToCreateUserPage}>회원가입</CreateButton>
       </LoginInformation>
       </Header>
 

@@ -6,6 +6,7 @@ import {
     Login,
     Email,
     Password,
+    OptionWrapper,
     RadioButton,
     RadioLabel,
     LoginButton,
@@ -22,17 +23,29 @@ export default function LoginUserPageUI () {
             </Header>
             <Body>
                 <Login>
-                    <Email></Email>
-                    <Password></Password>
-                    <RadioButton></RadioButton>
-                    <RadioLabel></RadioLabel>
-                    <LoginButton></LoginButton>
+                    <Email
+                        name="myEmail"
+                        type="text"
+                        placeholder="이메일을 입력해주세요."
+                    />
+                    <Password
+                        name="myPassword"
+                        type="password"
+                        placeholder="비밀번호를 입력해주세요"
+                    />
+                <OptionWrapper>   
+                    <RadioButton type="radio" name="radio-button"/>
+                    <RadioLabel htmlFor="login">로그인 상태 유지</RadioLabel>
+                </OptionWrapper>
+                    <LoginButton>로그인하기</LoginButton>
                 </Login>
             </Body>
             <Footer>
-                <LoginItem></LoginItem>
-                <LoginItem></LoginItem>
-                <LoginItem></LoginItem>
+                <LoginItem>이메일찾기</LoginItem>
+                <>|</>
+                <LoginItem>비밀번호 찾기</LoginItem>
+                <>|</>
+                <LoginItem>회원가입</LoginItem>
             </Footer>
         </Wrapper>
     )

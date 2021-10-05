@@ -1,31 +1,61 @@
 import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
-    width: 1920px;
-    height: 1080px;
+    width: 1200px;
+    
     background-color: blue;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
 `
 export const Header = styled.div`
     display: flex;
+    align-items: center;
+    background-color: green;
+    font-size: 30px;
     
 `
 
 export const Body = styled.div`
     width: 800px;
-    height: 600px;
+    height: 280px;
     display: flex;
     align-items: center;
+    flex-direction: column;
+    background-color: red;
 `
-export const Login = styled.div ``
+export const Login = styled.div `
+  display: flex;
+  flex-direction: column;
+  
+`
 
 export const Email = styled.input `
-
+  width: 384px;
+  height: 64px;
+  
+  border: 1px solid  #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 16px;
+  margin-top: 10px;
 `
 export const Password = styled.input `
-    
+  width: 384px;
+  height: 64px;
+  
+  border: 1px solid  #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 16px;
+  margin-top: 10px;
+`
+
+export const OptionWrapper= styled.div`
+  padding-top: 10px;
+  margin-top: 10px;
 `
 export const RadioButton = styled.input`
   cursor: pointer;
+  
 `;
 
 export const RadioLabel = styled.label`
@@ -36,24 +66,32 @@ export const RadioLabel = styled.label`
 `;
 
 export const LoginButton = styled.button`
-    width: 800px;
-    height: 600px;
-    background-color: gray;
-    border: none;
-    font-size: 16px;
-    font-weight: 500;
-    margin-left: 12px;
-    margin-right: 12px;
+  width: 384px;
+  height: 64px;
+  
+  border: 1px solid  #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 16px;
+  margin-top: 10px;
     
 `;
 export const Footer = styled.div`
-
+  border-top: 4px solid  #bdbdbd;
+  width: 384px;
+  display: flex;
+  align-items: center;
+  background-color: red;
+  
 `
 
 export const LoginItem = styled.div`
-    margin: 0px 60px;
+      
     cursor: pointer;
     
+    font-size:14px;
+    display: flex;
+    align-items: center;
+    text-align: center;
 
     :hover {
         color: orange;

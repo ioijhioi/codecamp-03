@@ -1,7 +1,15 @@
-import homeUI from './home.presenter'
+import HomeUI from './home.presenter'
+import { useRouter } from 'next/router'
 
-export default function home () {
+export default function Home () {
+    const router = useRouter();
 
-    return <homeUI />
+    function onClickMoveToLoginPage (){
+        router.push("/loginUser")
+    }
+
+    return <HomeUI 
+            onClickMoveToLoginPage={onClickMoveToLoginPage}
+        />
     
 }

@@ -1,8 +1,8 @@
-import home from "../src/components/unit/MainHome/home.container"
+import Home from "../src/components/unit/MainHome/home.container"
 
-export default function Home() {
+export default function HomePage() {
     
-  return <home />
+  return <Home />
     
   
 }

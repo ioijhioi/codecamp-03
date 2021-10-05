@@ -1,9 +1,9 @@
+import CreateUserPageUI from './createUser.presenter'
 
 
+export default function CreateUserPage (){
 
-// export default function LoginUserPage (){
-
-//     return (
-
-//     )
-// }
+    return (
+        <CreateUserPageUI />
+    )
+}
