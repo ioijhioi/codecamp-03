@@ -6,14 +6,17 @@ import LayoutHeaderUI from "./LayoutHeader.presenter";
 export default function LayoutHeader() {
   const router = useRouter();
 
-  function onClickMoveToMainPage () {
-    router.push("/boards")
+  function onClickMoveToMainMenu () {
+    router.push(event.target.id)
   }
+  
 
+  
 
   return ( 
     <LayoutHeaderUI 
-      onClickMoveToMainPage={onClickMoveToMainPage}
+      onClickMoveToMainMenu={onClickMoveToMainMenu}
+     
     />
   )
 }

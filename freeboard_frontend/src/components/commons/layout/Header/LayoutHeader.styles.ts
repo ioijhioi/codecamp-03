@@ -5,7 +5,8 @@ export const Wrapper = styled.div`
   height: 100%;
   margin: 0 auto;
   padding: 0 30px;
-  
+  display: flex;
+  flex-direction: row;
 
   font-family: "my-font";
 `;
@@ -20,10 +21,26 @@ export const Button = styled.button`
   cursor: pointer;
 `
 
-export const LogoBox = styled.img`
+export const LogoBox = styled.div`
   width: 250px;
   height: 60px;
   
   cursor: pointer;
  
 `
+export const LoginInformation = styled.div`
+
+`
+
+export const LoginButton = styled.span`
+  margin: 10px;
+  color: #5729ff;
+  cursor: pointer;
+`
+
+export const CreateButton = styled.span`
+  margin: 10px;
+  color: #5729ff;
+  cursor: pointer;
+`
+

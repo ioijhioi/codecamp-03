@@ -7,15 +7,15 @@
 // s는 길이 4 이상, 20이하인 문자열입니다.
 
 // 입출력 예
-// phone_number	return
+// phone_number	    return
 // "01033334444"	"*******4444"
-// "027778888"	"*****8888"
+// "027778888"	    "*****8888"
 
 
 function solution(phone_number) {
     let answer = '';
     
-    for( let i = 0; i < phone_number.length; i ++ ) {
+    for( let i = 0; i < phone_number.length; i = i + 1 ) {
         if( i < phone_number.length - 4 ) {
             answer = answer + '*';
             
