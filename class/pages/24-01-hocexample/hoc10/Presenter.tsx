@@ -4,21 +4,19 @@ import { GlobalContext } from "../../_app";
 
 function withAuth(Component) {
   return function 이름은상관없음(props) {
-    const router = useRouter();
-    const { accessToken } = useContext(GlobalContext);
-
-    useEffect(() => {
-      if (!accessToken) router.push("/login");
-    }, []);
-
+    const router = useRouter
+    
     return <Component {...props} />;
   };
 }
 
-const withAuth = (Component) => (props) => {
-  return < Component {...props} />
-}
+const withAuth = (index) => (event) => {
+  // 검증로직, 셋팅로직
 
+  index, event
+
+  // return <Component {...props} />;
+};
 
 const Presenter = (props) => {
   return <div>프리젠터 입니다. props: {props.aaa}</div>;

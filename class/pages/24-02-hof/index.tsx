@@ -1,16 +1,20 @@
 
 export default function HofPage (){
 
-    function onClickFunction (event) {
+    // function onClickFunction (event) {
 
-        alert (`${event.target.id} 번째 입니다.`)
+    //     alert (`${event.target.id} 번째 입니다.`)
+    // }
+
+    const onClickFunction2 =(index) => (event) => {
+        alert (`${index}번째 입니다.`)
     }
 
     return (
         <> 
             <div> HOF 연습 페이지 입니다</div>
             {["철수", "영희", "훈이"].map((el, index)=> (
-                <div id={String(index)} onClick={onClickFunction}>
+                <div onClick={onClickFunction2(index)(event)}>
                     {el}입니다.
                 </div>
             ))}
