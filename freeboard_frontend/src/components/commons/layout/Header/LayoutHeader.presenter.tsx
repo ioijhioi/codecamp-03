@@ -2,7 +2,7 @@ import {
   Wrapper, 
   Header,
   Button,
-  LogoBox,
+  // LogoBox,
   LoginInformation,
   LoginButton,
   CreateButton,
@@ -13,7 +13,7 @@ export default function LayoutHeaderUI(props) {
     <Wrapper>
       <Header>
         <Button>
-          <LogoBox onClick={props.onClickMoveToMainMenu}/>
+          {/* <LogoBox onClick={props.onClickMoveToMainMenu}/> */}
         </Button>
       <LoginInformation>
           <LoginButton onClick={props.onClickMoveToLoginPage}>로그인</LoginButton>

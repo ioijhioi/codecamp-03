@@ -10,3 +10,8 @@ export const SliderItem = styled.img`
   height: 350px;
   margin: auto;
 `;
+
+export const SliderItemYoutube = styled.input`
+  height: 350px;
+  margin: auto;
+`

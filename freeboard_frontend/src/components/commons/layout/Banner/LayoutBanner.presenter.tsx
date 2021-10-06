@@ -1,4 +1,8 @@
-import { SliderItem, Wrapper } from "./LayoutBanner.styles";
+import { 
+  SliderItem, 
+  Wrapper,
+  SliderItemYoutube,
+} from "./LayoutBanner.styles";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -16,7 +20,7 @@ export default function LayoutBannerUI() {
     <Wrapper>
       <Slider {...settings}>
         <div>
-          <SliderItem src="/images/layout/ronaldo123.jpg" />
+          <SliderItemYoutube src="/images/layout/ronaldo123.jpg" />
         </div>
         <div>
           <SliderItem src="/images/layout/ronaldo123.jpg" />

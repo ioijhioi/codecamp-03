@@ -6,7 +6,7 @@ import LayoutHeaderUI from "./LayoutHeader.presenter";
 export default function LayoutHeader() {
   const router = useRouter();
 
-  // function onClickMoveToMainMenu ( ) {
+  // function onClickMoveToHome ( ) {
   //   router.push("")
   // }
   
@@ -20,7 +20,7 @@ export default function LayoutHeader() {
   }
   
   return <LayoutHeaderUI
-          // onClickMoveToMainMenu={onClickMoveToMainMenu}
+          // onClickMoveToHome={onClickMoveToHome}
           onClickMoveToLoginPage={onClickMoveToLoginPage}
           onClickMoveToCreateUserPage={onClickMoveToCreateUserPage}
          
