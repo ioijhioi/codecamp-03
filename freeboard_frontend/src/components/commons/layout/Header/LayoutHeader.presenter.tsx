@@ -1,6 +1,6 @@
 import { 
   Wrapper, 
-  Header,
+  // Header,
   Button,
   // LogoBox,
   LoginInformation,
@@ -11,15 +11,15 @@ import {
 export default function LayoutHeaderUI(props) {
   return (
     <Wrapper>
-      <Header>
+      
         <Button>
           {/* <LogoBox onClick={props.onClickMoveToMainMenu}/> */}
         </Button>
-      <LoginInformation>
+        <LoginInformation>
           <LoginButton onClick={props.onClickMoveToLoginPage}>로그인</LoginButton>
           <CreateButton onClick={props.onClickMoveToCreateUserPage}>회원가입</CreateButton>
       </LoginInformation>
-      </Header>
+      
 
     </Wrapper>
   )

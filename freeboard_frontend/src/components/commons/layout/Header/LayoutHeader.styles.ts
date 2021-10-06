@@ -7,18 +7,23 @@ export const Wrapper = styled.div`
   padding: 0 30px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  
 
   font-family: "my-font";
+  /* background-color: blue; */
 `;
 
-export const Header = styled.div`
-  
-  font-family: "my-font";
-`
+// export const Header = styled.div`
+//   width: 250px;
+//   display:flex;
+//   font-family: "my-font";
+// `
 export const Button = styled.button`
   width: 200px;
   height: 60px;
   cursor: pointer;
+  display: flex;
 `
 
 export const LogoBox = styled.div`
@@ -29,18 +34,26 @@ export const LogoBox = styled.div`
  
 `
 export const LoginInformation = styled.div`
-
+  width: 250px;
+  display: flex;
+  flex-direction: row;
+  background-color: skyblue;
+  justify-content: flex-end;
 `
 
-export const LoginButton = styled.span`
+export const LoginButton = styled.div`
   margin: 10px;
   color: #5729ff;
   cursor: pointer;
+  display: flex;
+  align-items:flex-end;
 `
 
-export const CreateButton = styled.span`
+export const CreateButton = styled.div`
   margin: 10px;
   color: #5729ff;
   cursor: pointer;
+  display: flex;
+  align-items:flex-end;
 `
 

@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
     padding: 0 30px;
     display: flex;
     flex-direction: column;
+    box-shadow: 0px 0px 10px gray;
 `
 
 export const Header = styled.div`

@@ -1,15 +1,20 @@
-
+import {
+    Wrapper,
+    Research,
+    ResearchButton,
+} from "./Searches01.styles"
 
 export default function Searches01UI(){
 
 
     return(
-        <>
-            <input type="text" 
+        <Wrapper>
+            <Research type="text" 
                     placeholder="🔎 제목을 검색해주세요"/>
                     {/* onChange={onChangeSearch}/> */}
             
-            <button>검색하기</button>
-        </>
+            
+            <ResearchButton>검색하기</ResearchButton>
+        </Wrapper>
     )
 }
