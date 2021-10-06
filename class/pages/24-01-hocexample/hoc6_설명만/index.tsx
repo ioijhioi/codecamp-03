@@ -22,4 +22,4 @@ export default Container;
 //  withAuth(Component)     ==>   이름은상관없음
 // (withAuth(Component))()  ==>  (이름은상관없음)()  ==>  Component
 
-// (withAuth(Presenter))()  ==>  (이름은상관없음)()  ==>  Presenter
+// (withAuth(Presenter))()  ==>  (이름은상관없음)()  ==>  Presenter <<<<<=이건 프리젠터 입니다 .이거임

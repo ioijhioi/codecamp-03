@@ -6,10 +6,10 @@ const Container = () => {
     </>
   );
 };
-
+// 컨테이너에서 프리젠터로 보내는 과정
 function withAuth(Component) {
   return function 이름은상관없음(props) {
-    return <Component {...props} />;
+    return <Component {...props} />; // <<<<<<<----component는 presenter이다.
   };
 }
 
@@ -26,5 +26,5 @@ export default Container;
 //
 //
 // (withAuth(Presenter))({aaa: "철수"})  ==>  (이름은상관없음)({aaa: "철수"})
-//
+//                        ^^위에는 props
 //                                           ==>  <Presenter {...props} />

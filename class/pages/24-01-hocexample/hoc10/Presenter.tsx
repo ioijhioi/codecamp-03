@@ -16,15 +16,9 @@ function withAuth(Component) {
 }
 
 const withAuth = (Component) => (props) => {
-  const router = useRouter();
-  const { accessToken } = useContext(GlobalContext);
+  return < Component {...props} />
+}
 
-  useEffect(() => {
-    if (!accessToken) router.push("/login");
-  }, []);
-
-  return <Component {...props} />;
-};
 
 const Presenter = (props) => {
   return <div>프리젠터 입니다. props: {props.aaa}</div>;
