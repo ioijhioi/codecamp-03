@@ -1,13 +1,15 @@
 import {
     Wrapper,
-    GoToPage,
+    GoToEnter,
+    GoToLoginPage,
 } from "./home.styles"
 
 export default function HomeUI (props) {
 
     return (
         <Wrapper>
-            <GoToPage onClick= {props.onClickMoveToLoginPage}>로그인</GoToPage>
+            <GoToEnter onClick={props.onClickMoveToMainpage}>입장하기</GoToEnter>
+            <GoToLoginPage onClick= {props.onClickMoveToLoginPage}>로그인</GoToLoginPage>
         </Wrapper>
     )
 }

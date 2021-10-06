@@ -37,7 +37,7 @@ export const Label = styled.div`
 `
 export const Email = styled.input`
     width: 384px;
-    height: 64px;
+    height: 60px;
     
     border: 1px solid  #FFFFFF;
     box-sizing: border-box;
@@ -47,7 +47,7 @@ export const Email = styled.input`
 `
 export const Writer = styled.input`
     width: 384px;
-    height: 64px;
+    height: 60px;
     
     border: 1px solid  #FFFFFF;
     box-sizing: border-box;
@@ -58,7 +58,7 @@ export const Writer = styled.input`
 
 export const Password = styled.input`
     width: 384px;
-    height: 64px;
+    height: 60px;
     
     border: 1px solid  #FFFFFF;
     box-sizing: border-box;

@@ -63,7 +63,7 @@ export default function CreateUserPage (){
 
                 console.log(result.data.createUser._id)
                 router.push(`/boards/${result.data.createUser._id}`);
-                alert("로그인을 했습니다")
+                alert("가입을 축하축하요")
             } catch (error){
                 console.log("error")
             }
