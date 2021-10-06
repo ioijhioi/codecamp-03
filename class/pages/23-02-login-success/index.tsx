@@ -11,7 +11,7 @@ const FETCH_USER_LOGGED_IN = gql`
     }
 `
 
-
+  // accesstoken을 받은 경우에만 접근가능!
 export default function LoginSuccessPage(){
     const {setUserInfo, userInfo} = useContext(GlobalContext)
     const { data} = useQuery(FETCH_USER_LOGGED_IN)
@@ -23,8 +23,8 @@ export default function LoginSuccessPage(){
             name: data?.fetchUserLoggedIn.name,
         })
     }, [data])
-
     console.log(userInfo);
+  
 
     return (
         <>
