@@ -28,6 +28,7 @@ export const WriterWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   padding-top: 40px;
+  background-color:red;
 `;
 
 export const Writer = styled.input`
@@ -52,6 +53,7 @@ export const Label = styled.div`
 
 export const InputWrapper = styled.div`
   padding-top: 40px;
+  background-color:skyblue;
 `;
 
 export const Subject = styled.input`

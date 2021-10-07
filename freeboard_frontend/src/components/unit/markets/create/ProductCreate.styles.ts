@@ -21,10 +21,33 @@ export const Title = styled.div`
     font-weight: bold;
 `
 
-export const Body = styled.div`
+export const ItemWrapper = styled.div`
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-top: 40px;
+    background-color: skyblue;
+`
+
+export const Label = styled.div`
+    padding-bottom: 16px;
+    font-size: 16px;
+    font-weight: 500;
+`
+
+export const Tool = styled.div`
+    width: 100%;
+    height: 320px;
+    background-color: green;
+`
+
+export const ToolBox = styled.div`
+    width: 100%;
+    height: 52px;
+    padding: 16px;
+    background-color: red;
+`
+
+export const Content = styled.textarea`
+    width:100%;
+    height: 270px;
+    padding: 14px;
+
 `
