@@ -12,4 +12,5 @@ export const Research = styled.input`
 `
 export const ResearchButton = styled.div`
     width: 500px;
+    background-color: blue;
 `

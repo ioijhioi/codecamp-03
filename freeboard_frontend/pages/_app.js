@@ -33,7 +33,7 @@ function MyApp({ Component, pageProps }) {
   
   const uploadLink = createUploadLink ({
     uri: "http://backend03.codebootcamp.co.kr/graphql",
-    // headers: { authorization: `Bearer ${accessToken}`}
+    headers: { authorization: `Bearer ${accessToken}`}
   })
   const client = new ApolloClient({
     link: ApolloLink.from([uploadLink]),

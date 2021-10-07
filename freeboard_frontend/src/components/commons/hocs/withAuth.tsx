@@ -7,9 +7,10 @@ export const withAuth = (Component) => (props) => {
     const {accessToken} = useContext(GlobalContext);
 
     useEffect (() => {
+        const accessToken = localStorage.getItem("accessToken");
         if ( !accessToken) {
             alert("로그인이 필요합니다.")
-            router.push("/maps")
+            router.push("/loginuser")
         }
     }, []);
 
