@@ -4,21 +4,27 @@ import { yupResolver} from "@hookform/resolvers/yup"
 import { schema} from './ProductCreate.validations'
 import { CREATE_USED_ITEM } from "./ProductCreate.queries"
 import { useMutation } from '@apollo/client'
+import { useRouter} from "next/router"
 
 export default function ProductCreate() {
+    const router = useRouter()
     const { handleSubmit, register, formState} = useForm ({
         mode: "onChange",
         resolver: yupResolver(schema),
     })
 
-    const [createUsedItem] = useMutation(CREATE_USED_ITEM);
+    const [createUseditem] = useMutation(CREATE_USED_ITEM);
 
-    async function onClickSingup (){
+    async function onClickSubmit(data) {
+        console.log({...data})
 
-        const result = await createUsedItem ({
-                variables:
-            })
-        
+        const result = await createUseditem ({
+            variables: {
+                createUseditemInput: {...data},
+            },
+        })
+        console.log(result);
+        router.push(`/markets/list/${result.data?.createUseditem._id}`)
     }
 
 
@@ -27,7 +33,7 @@ export default function ProductCreate() {
             handleSubmit={handleSubmit}
             register={register}
             formState={formState}
+            onClickSubmit={onClickSubmit}
         />
-
     )
 }

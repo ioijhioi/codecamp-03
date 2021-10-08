@@ -167,7 +167,7 @@ export default function BoardsNewPage(props) {
         const result = await createBoard({
           variables: {
             createBoardInput: {
-              writer: writer,
+              writer,
               password: password,
               title: title,
               contents: contents,
