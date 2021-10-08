@@ -36,13 +36,15 @@ export default function ProductCreateUI (props) {
                     type="text"  
                     name="name"
                     placeholder="상품명을 작성해주세요" 
-                    register={props.register("myProduct")}/>
+                    register={props.register("name")}
+                />
             </ItemWrapper>
             <ItemWrapper>
                 <Label>한줄요약</Label>
                 <Box
                     type="text"
                     placeholder="한줄 요약 해주세요"
+                    register={props.register("remarks")}
                 />
             </ItemWrapper>
             <ItemWrapper>
@@ -52,6 +54,7 @@ export default function ProductCreateUI (props) {
                     <Content 
                         name="content" 
                         placeholder="상품을 설명해주세요" 
+                        register={props.register("contents")}
                     />
                 </Tool>
             </ItemWrapper>

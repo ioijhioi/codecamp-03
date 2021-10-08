@@ -30,6 +30,8 @@ export const Label = styled.div`
     padding-bottom: 16px;
     font-size: 16px;
     font-weight: 500;
+    margin-top: 10px;
+    
 `
 
 export const Tool = styled.div`
