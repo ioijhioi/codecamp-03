@@ -6,6 +6,21 @@ import {
     Tool,
     ToolBox,
     Content,
+    MapWrapper,
+    MapBox,
+    Map,
+    GpsAddress,
+    // GPS,
+    // // InputGPS,
+    // // LAT,
+    // // LNG,
+    // Adress,
+    PhotoWrapper,
+    MainPhotoWrapper,
+    RadioButton,
+    RadioLabel,
+    ButtonWrapper,
+    SubmitButton,
     
 } from './ProductCreate.styles'
 import Box from '../../../commons/inputs/CreateUseIteminput01/CreateUseIteminput01'
@@ -56,6 +71,44 @@ export default function ProductCreateUI (props) {
                     placeholder="#태그 #태그 #태그"
                     register={props.register("myTag")}/>
             </ItemWrapper>
+            <MapWrapper>
+                <MapBox>
+                    <Label>거래위치 </Label>
+                    <Map>지도화면입니다.</Map>
+                </MapBox>
+                <GpsAddress>
+                    {/* <GPS> */}
+                        <Label>GPS</Label>
+                        {/* <InputGPS>
+                            <LAT></LAT>
+                            <div></div>
+                            <LNG></LNG>
+                        </InputGPS> */}
+                    {/* </GPS> */}
+                    {/* <Adress> */}
+                        <Label>주소</Label>
+                        {/* <InputAddress>
+                        </InputAddress>
+                        < */}
+                    {/* </Adress> */}
+                </GpsAddress>
+            </MapWrapper>
+            <PhotoWrapper>
+                <Label>사진 첨부</Label>
+                
+            </PhotoWrapper>
+            <MainPhotoWrapper>
+                <Label>메인 사진 설정</Label>
+                <RadioButton type="radio" id="image" name="radio-button1"/>
+                <RadioLabel>사진1</RadioLabel>
+                <RadioButton type="radio" id="image" name="radio-button2"/>
+                <RadioLabel>사진2</RadioLabel>
+            </MainPhotoWrapper>
+            <ButtonWrapper>
+                        <SubmitButton>
+
+                        </SubmitButton>
+            </ButtonWrapper>
         </Wrapper>
     )
 }

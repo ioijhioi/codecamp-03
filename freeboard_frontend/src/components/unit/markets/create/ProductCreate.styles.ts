@@ -23,7 +23,7 @@ export const Title = styled.div`
 
 export const ItemWrapper = styled.div`
     width: 100%;
-    background-color: skyblue;
+    /* background-color: red; */
 `
 
 export const Label = styled.div`
@@ -42,7 +42,7 @@ export const ToolBox = styled.div`
     width: 100%;
     height: 52px;
     padding: 16px;
-    background-color: red;
+    background-color: skyblue;
 `
 
 export const Content = styled.textarea`
@@ -50,4 +50,82 @@ export const Content = styled.textarea`
     height: 270px;
     padding: 14px;
 
+`
+
+export const MapWrapper = styled.div`
+    width: 100%;
+    height: 300px;
+    background-color: greenyellow;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    /* padding-top: 40px; */
+`
+
+export const MapBox = styled.div`
+    width: 384px;
+    height: 300px;
+    background-color: peru;
+`
+
+export const Map = styled.div`
+    width: 384px;
+    height: 252px;
+    background-color: orange;
+`
+
+export const GpsAddress = styled.div`
+    width: 100%;
+    height: 300px;
+    background-color: red;
+`
+
+// export const GPS = styled.div`
+
+// `
+
+// export const Adress = styled.div`
+
+// `
+
+export const PhotoWrapper = styled.div`
+    width: 100%;
+    height: 250px;
+    background-color: papayawhip;
+`
+
+export const MainPhotoWrapper = styled.div`
+    width: 100%;
+    height: 100px;
+`
+
+export const RadioButton = styled.input`
+  cursor: pointer;
+`;
+
+export const RadioLabel = styled.label`
+  margin-left: 8px;
+  margin-right: 20px;
+  font-weight: 500;
+  cursor: pointer;
+`;
+
+export const ButtonWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 80px;
+    background-color: pink;
+`
+
+export const SubmitButton = styled.button`
+    width: 179px;
+    height: 52px;
+    
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 12px;
+    margin-right: 12px;
+    
 `
