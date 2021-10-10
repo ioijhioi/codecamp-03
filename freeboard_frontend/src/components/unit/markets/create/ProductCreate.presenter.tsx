@@ -37,7 +37,7 @@ export default function ProductCreateUI (props) {
                     <Box 
                         type="text"  
                         placeholder="상품명을 작성해주세요" 
-                        {...props.register("name")}
+                        register={props.register("name")}
                     />
                 </ItemWrapper>
                 <ItemWrapper>
@@ -45,7 +45,7 @@ export default function ProductCreateUI (props) {
                     <Box
                         type="text"
                         placeholder="한줄 요약 해주세요"
-                        {...props.register("remarks")}
+                        register={props.register("remarks")}
                     />
                 </ItemWrapper>
                 <ItemWrapper>
@@ -55,7 +55,7 @@ export default function ProductCreateUI (props) {
                         <Box 
                             type="text"
                             placeholder="상품을 설명해주세요" 
-                            {...props.register("contents")}
+                            register={props.register("contents")}
                         />
                     </Tool>
                 </ItemWrapper>
@@ -64,7 +64,7 @@ export default function ProductCreateUI (props) {
                     <Box 
                         type="text"  
                         placeholder="판매 가격을 입력해주세요"
-                        {...props.register("price")}
+                        register={props.register("price")}
                     />
                 </ItemWrapper>
                 <ItemWrapper>
@@ -72,7 +72,7 @@ export default function ProductCreateUI (props) {
                     <Box 
                         type="text"  
                         placeholder="#태그 #태그 #태그"
-                        {...props.register("tags")}
+                        register={props.register("tags")}
                     />
                 </ItemWrapper>
                 <MapWrapper>
@@ -109,7 +109,7 @@ export default function ProductCreateUI (props) {
                     <RadioLabel>사진2</RadioLabel>
                 </MainPhotoWrapper>
                 <ButtonWrapper>
-                    <SubmitButton name="등록하기" isValid={props.formState.isValid}/>
+                    <SubmitButton type="submit" name="등록하기" isValid={props.formState.isValid}/>
 
                 </ButtonWrapper>
             </Wrapper>

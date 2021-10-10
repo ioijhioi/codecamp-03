@@ -3,7 +3,7 @@ import { useForm} from 'react-hook-form'
 import { yupResolver} from "@hookform/resolvers/yup"
 import { schema} from './ProductCreate.validations'
 import { CREATE_USED_ITEM } from "./ProductCreate.queries"
-import { useMutation } from '@apollo/client'
+import { useMutation} from "@apollo/client"
 import { useRouter} from "next/router"
 
 export default function ProductCreate() {
@@ -24,7 +24,7 @@ export default function ProductCreate() {
             },
         })
         console.log(result);
-        router.push(`/markets/list/${result.data?.createUseditem._id}`)
+        
     }
 
 
