@@ -24,6 +24,7 @@ export default function ProductCreate() {
             },
         })
         console.log(result);
+        router.push(`/markets/detail/${result.data?.createUseditem._id}`)
         
     }
 

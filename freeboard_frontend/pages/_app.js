@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }) {
 
   useEffect (() => {
     const accessToken = localStorage.getItem("accessToken") || "";
-    setAccessToken(accessToken)
+    setAccessToken(accessToken);
   }, []);
   
   const uploadLink = createUploadLink ({
