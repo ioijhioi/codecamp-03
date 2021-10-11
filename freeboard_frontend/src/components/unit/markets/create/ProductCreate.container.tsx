@@ -23,10 +23,11 @@ export default function ProductCreate() {
                 createUseditemInput: {...data},
             },
         })
-        console.log(result);
-        router.push(`/markets/detail/${result.data?.createUseditem._id}`)
         
-    }
+        console.log(result);
+        router.push(`/markets${result.data?.createUseditem._id}`)
+        alert("게시물을 등록합니다")
+    } 
 
 
     return (

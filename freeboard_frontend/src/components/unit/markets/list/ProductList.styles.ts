@@ -43,6 +43,7 @@ export const Product = styled.div`
     background-color: green;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 `
 
 export const ProductLeft = styled.div`
@@ -76,7 +77,8 @@ export const PickedCount = styled.div`
 `
 
 export const ProductRight = styled.div`
-
+    width: 200px;
+    display: flex;
 `
 export const Button = styled.button`
     width: 171px;
