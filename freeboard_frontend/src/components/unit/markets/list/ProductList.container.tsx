@@ -14,9 +14,14 @@ export default function ProductList (){
         router.push("/markets/new")
     }
 
+    function onClickMoveToDetail (event:any) {
+        router.push(`/markets/${event.target.id}`)
+    }
+
     return (
         <ProductListUI 
             data={data}
+            onClickMoveToDetail={onClickMoveToDetail}
             onClickMoveToCreateProduct={onClickMoveToCreateProduct}
         
         />

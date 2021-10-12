@@ -25,7 +25,7 @@ import {
 } from "./BoardWrite.styles";
 import {Modal} from "antd"
 import DaumPostcode from 'react-daum-postcode';
-import Uploads01 from "../../../commons/uploads/01/Uploads01.container"
+import Uploads01 from "../../../commons/uploads/01-board/Uploads01.container"
 
 
 export default function BoardWriteUI(props) {

@@ -35,15 +35,15 @@ export const Wrapper1Head = styled.div`
 `;
 
 export const HeadLeft = styled.div`
-  /* border: 1px solid black;
+  border: 1px solid black;
     width : 498px;
     height: 60px;
     
     display:flex;
     flex-direction: row;
-    align-items: flex-start; */
-  display: flex;
-  flex-direction: row;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
 `;
 
 export const Images = styled.img`

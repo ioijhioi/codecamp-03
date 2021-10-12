@@ -27,7 +27,7 @@ export default function ProductListUI (props) {
                     <Images>이미지</Images>
                     <Product>
                         <ProductLeft>
-                            <Name>{el.name}</Name>
+                            <Name id={el._id} onClick={props.onClickMoveToDetail}>{el.name}</Name>
                             <Remarks>{el.remarks}</Remarks>
                             <Tags>{el.tags}</Tags>
                             <SellerWrapper>
@@ -36,7 +36,7 @@ export default function ProductListUI (props) {
                             </SellerWrapper>
                         </ProductLeft>
                         <ProductRight>
-                            {el.price}
+                            {el.price}원
                         </ProductRight>
                     </Product>
                         

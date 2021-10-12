@@ -32,7 +32,7 @@ export default function ProductDetailUI (props) {
             <Header>
                 <Icon></Icon>
                 <SellerInformation>
-                    <Seller></Seller>
+                    <Seller>{props.data?.fetchUseditem.seller.name}</Seller>
                     <UpdatedAt></UpdatedAt>
                 </SellerInformation>
                 <Right>
