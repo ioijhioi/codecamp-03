@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const Wrapper = styled.div`
     width: 1200px;
     
-    background-color: blue;
+    /* background-color: blue; */
     display: flex;
     flex-direction: column;
     align-items:center;
@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
 export const Header = styled.div`
     display: flex;
     align-items: center;
-    background-color: green;
+    /* background-color: green; */
     font-size: 30px;
     
 `
@@ -22,7 +22,7 @@ export const Body = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: red;
+    /* background-color: red; */
 `
 export const Login = styled.div `
   display: flex;
@@ -38,6 +38,7 @@ export const Email = styled.input `
   box-sizing: border-box;
   border-radius: 16px;
   margin-top: 10px;
+  background-color:whitesmoke;
 `
 export const Password = styled.input `
   width: 384px;
@@ -47,6 +48,7 @@ export const Password = styled.input `
   box-sizing: border-box;
   border-radius: 16px;
   margin-top: 10px;
+  background-color:whitesmoke;
 `
 
 export const OptionWrapper= styled.div`
@@ -76,11 +78,11 @@ export const LoginButton = styled.button`
     
 `;
 export const Footer = styled.div`
-  border-top: 4px solid  #bdbdbd;
+  border-top: 2px solid  #bdbdbd;
   width: 384px;
   display: flex;
   align-items: center;
-  background-color: red;
+  /* background-color: red; */
   
 `
 

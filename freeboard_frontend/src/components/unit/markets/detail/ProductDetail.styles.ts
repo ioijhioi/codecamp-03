@@ -81,7 +81,7 @@ export const Body = styled.div`
     /* align-items: center; */
     border-bottom: 1px solid #bdbdbd;
     padding-bottom: 20px;
-    background-color: skyblue;
+    /* background-color: skyblue; */
 `
 export const ProductHeader =styled.div`
     width: 100%;
@@ -105,14 +105,20 @@ export const Like = styled.div`
     height: 63px;
     display: flex;
     flex-direction: column;
-    background-color:red;
+    /* background-color:red; */
+    justify-content: center;
 `
 export const LikeIcon = styled.img`
-
+    width: 30px;
+    height: 27px;
+    display: flex;
+   
+    align-items: center;
 `
 
 export const PickedCount = styled.div`
-
+    display: flex;
+    justify-content: center;
 `
 
 export const ProductBody = styled.div`
@@ -127,9 +133,11 @@ export const Price = styled.div`
 `
 
 export const Image = styled.div`
-    width:250px;
-    height:200px;
+    width:400px;
+    height:500px;
     background-color:yellow;
+    display: flex;
+    align-items: center;
 `
 
 export const Content = styled.div`
@@ -137,11 +145,13 @@ export const Content = styled.div`
 `
 
 export const Tags = styled.div`
-
+    border-bottom: 1px solid #bdbdbd;
 `
 
 export const Map = styled.div`
-
+    width: 792px;
+    height: 360px;
+    
 `
 
 export const Botton = styled.div`

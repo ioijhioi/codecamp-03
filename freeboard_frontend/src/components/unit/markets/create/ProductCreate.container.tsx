@@ -25,7 +25,7 @@ export default function ProductCreate() {
         })
         
         console.log(result);
-        router.push(`/markets${result.data?.createUseditem._id}`)
+        router.push(`/markets/${result.data?.createUseditem._id}`)
         alert("게시물을 등록합니다")
     } 
 

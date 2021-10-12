@@ -26,8 +26,8 @@ export default function ProductListUI (props) {
                 <Row key={el._id}>
                     <Images>이미지</Images>
                     <Product>
-                        <ProductLeft>
-                            <Name id={el._id} onClick={props.onClickMoveToDetail}>{el.name}</Name>
+                        <ProductLeft >
+                            <Name id={el._id} onClick={props.onClickMoveToDetail(el)} >{el.name}</Name>
                             <Remarks>{el.remarks}</Remarks>
                             <Tags>{el.tags}</Tags>
                             <SellerWrapper>

@@ -1,12 +1,12 @@
 import { useRouter } from 'next/router'
 import ProductListUI from "./ProductList.presenter"
 import {useQuery} from "@apollo/client"
-import {FETCH_USED_ITEMS} from "./ProductList.queries"
+import {FETCH_USED_ITEMS, } from "./ProductList.queries"
 
 
 export default function ProductList (){
     const router = useRouter();
-    const { data } =useQuery(FETCH_USED_ITEMS)
+    const { data } =useQuery (FETCH_USED_ITEMS)
 
     console.log(data);
 

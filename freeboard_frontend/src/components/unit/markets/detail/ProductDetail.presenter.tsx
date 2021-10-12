@@ -58,8 +58,11 @@ export default function ProductDetailUI (props) {
                 <ProductBody>
                     <Price>240,120원</Price>
                     <Image></Image>
-                    <Content></Content>
-                    <Tags></Tags>
+                    <Content>액정에 잔기스랑 주변부 스크레치있습니다만 예민하신분아니면
+                        전현 신경쓰이지 않을정도입니다. 박스 보관중입니다
+                        메모용과,,,,,,,
+                    </Content>
+                    <Tags>#삼성전자 #겔럭시탭 #갓성비</Tags>
                     <Map></Map>
                 </ProductBody>
             </Body>
