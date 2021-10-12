@@ -5,10 +5,10 @@ import { LikeOutlined, DislikeOutlined } from "@ant-design/icons";
 export const Wrapper = styled.div`
   width: 1200px;
   margin: 100px;
-  /* display: flex;
+  display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center; */
+    align-items: center;
 `;
 
 export const Wrapper1 = styled.div`

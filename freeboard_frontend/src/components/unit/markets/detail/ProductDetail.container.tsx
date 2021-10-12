@@ -11,6 +11,9 @@ export default function ProductDetail (){
             useditemId: String(router.query.useditemId),
         },
     });
+    console.log(data, router);
+
+    
 
     return <ProductDetailUI data={data}/>
 }

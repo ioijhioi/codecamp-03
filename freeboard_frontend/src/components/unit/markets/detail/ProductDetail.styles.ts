@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const Wrapper = styled.div`
     width: 1200px;
     margin: 100px;
-    background-color: skyblue;
+    /* background-color: skyblue; */
     border: 1px solid black;
     padding-top: 80px;
     padding-bottom: 100px;
@@ -27,17 +27,34 @@ export const Header = styled.div`
     padding-bottom: 20px;
 
 `
-export const Icon = styled.img`
+
+export const HeaderLeft = styled.div`
+    /* border: 1px solid black; */
+    width : 498px;
+    height: 60px;
     
+    display:flex;
+    flex-direction: row;
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+`
+export const Icon = styled.img`
+    width: 40px;
+    height:40px;
+
 `
 
 export const SellerInformation = styled.div`
-    display: flex;
+    width : 498px;
+    height: 60px;
+    display:flex;
     flex-direction: column;
-    justify-content: center;
-    background-color: red;
-    width: 100px;
-    height: 80px;
+    align-items: flex-start;
+    display: flex;
+    padding-left: 15px;
+    /* background-color: red; */
+    
 `
 
 export const Seller = styled.span`
@@ -45,7 +62,7 @@ export const Seller = styled.span`
 `
 
 export const UpdatedAt = styled.div`
-
+    display:flex;
 `
 
 export const Right =styled.div`
@@ -57,13 +74,23 @@ export const Address = styled.div`
 `
 
 export const Body = styled.div`
-
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* align-items: center; */
+    border-bottom: 1px solid #bdbdbd;
+    padding-bottom: 20px;
+    background-color: skyblue;
 `
 export const ProductHeader =styled.div`
-
+    width: 792px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
 `
 export const Product = styled.div`
-
+    
 `
 export const Remarks = styled.div`
 
@@ -74,6 +101,13 @@ export const Name = styled.div`
 `
 
 export const Like = styled.div`
+    width: 38px;
+    height: 63px;
+    display: flex;
+    flex-direction: column;
+    background-color:red;
+`
+export const LikeIcon = styled.img`
 
 `
 
@@ -82,6 +116,10 @@ export const PickedCount = styled.div`
 `
 
 export const ProductBody = styled.div`
+    width: 790px;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
 
 `
 export const Price = styled.div`

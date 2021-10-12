@@ -1,6 +1,7 @@
 import {
     Wrapper,
     Header,
+    HeaderLeft,
     Icon,
     SellerInformation,
     Seller,
@@ -13,6 +14,7 @@ import {
     Remarks,
     Name,
     Like,
+    LikeIcon,
     PickedCount,
     ProductBody,
     Price,
@@ -30,11 +32,13 @@ export default function ProductDetailUI (props) {
     return (
         <Wrapper>
             <Header>
-                <Icon></Icon>
-                <SellerInformation>
-                    <Seller>{props.data?.fetchUseditem.seller.name}</Seller>
-                    <UpdatedAt></UpdatedAt>
-                </SellerInformation>
+                <HeaderLeft>    
+                    <Icon src="/images/product/sellericon.png"></Icon>
+                    <SellerInformation>
+                        <Seller>판매자</Seller>
+                        <UpdatedAt>Date: 2021.02.18</UpdatedAt>
+                    </SellerInformation>
+                </HeaderLeft>
                 <Right>
                     <div>이미지파일</div>
                     <Address></Address>
@@ -43,15 +47,16 @@ export default function ProductDetailUI (props) {
             <Body>
                 <ProductHeader>
                     <Product>
-                        <Remarks></Remarks>
-                        <Name></Name>
+                        <Remarks>2019 LTE 32GB</Remarks>
+                        <Name>삼성전자 갤럭시 탭A 10.1</Name>
                     </Product>
                     <Like>
-                        <PickedCount></PickedCount>
+                        <LikeIcon src="/images/product/likeheart.png"/>
+                        <PickedCount>20</PickedCount>
                     </Like>
                 </ProductHeader>
                 <ProductBody>
-                    <Price></Price>
+                    <Price>240,120원</Price>
                     <Image></Image>
                     <Content></Content>
                     <Tags></Tags>
