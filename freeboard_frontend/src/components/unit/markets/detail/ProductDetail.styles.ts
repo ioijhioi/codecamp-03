@@ -84,7 +84,7 @@ export const Body = styled.div`
     background-color: skyblue;
 `
 export const ProductHeader =styled.div`
-    width: 792px;
+    width: 100%;
     display:flex;
     flex-direction: row;
     justify-content: space-between;
@@ -93,11 +93,11 @@ export const Product = styled.div`
     
 `
 export const Remarks = styled.div`
-
+    font-size: 18px;
 `
 
 export const Name = styled.div`
-
+    font-size: 24px;
 `
 
 export const Like = styled.div`
@@ -123,11 +123,13 @@ export const ProductBody = styled.div`
 
 `
 export const Price = styled.div`
-
+    font-size: 36px;
 `
 
 export const Image = styled.div`
-
+    width:250px;
+    height:200px;
+    background-color:yellow;
 `
 
 export const Content = styled.div`
