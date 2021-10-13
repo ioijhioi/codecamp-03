@@ -45,7 +45,7 @@ export const firebaseApp = initializeApp ({
     headers: { authorization: `Bearer ${accessToken}` },
   });
   // 로그인처리 
-  // 
+  
   
   const client = new ApolloClient({
     
