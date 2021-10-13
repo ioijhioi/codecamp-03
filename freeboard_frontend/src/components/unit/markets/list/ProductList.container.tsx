@@ -14,7 +14,24 @@ export default function ProductList (){
         router.push("/markets/new")
     }
 
-    function onClickMoveToDetail (event:any) {
+    const onClickMoveToDetail = (el) => (event) => {
+        const baskets = JSON.parse(localStorage.getItem("baskets")) || []
+
+        let isExists = false
+        baskets.forEach ((basketEl) => {
+            if( el._id === basketEl._id) isExists = true
+        })
+        if (isExists) {
+            router.push(`/markets/${event.target.id}`)
+            return;
+            
+        }
+        const newEl = { ...el };
+        delete newEl.__typename;
+        baskets.push(newEl)
+
+        
+        localStorage.setItem("baskets", JSON.stringify(baskets));
         router.push(`/markets/${event.target.id}`)
     }
 
