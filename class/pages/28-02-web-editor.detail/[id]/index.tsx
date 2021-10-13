@@ -1,5 +1,6 @@
 import { useQuery, gql } from '@apollo/client'
 import { useRouter } from 'next/router';
+import Dompurify from "dompurify"
 
 
 const FETCH_BOARD = gql`
@@ -27,7 +28,14 @@ export default function WebEditorDetailPage (){
             <div>작성자: {data?.fetchBoard.writer}</div>
             <div>제목: {data?.fetchBoard.title}</div>
             <div>
-                내용: <div dangerouslySetInnerHTML={{ __html: data?.fetchBoard.contents}}/>
+                내용:
+                {process.browser && (
+                    <div 
+                        dangerouslySetInnerHTML={{ 
+                            __html: Dompurify.sanitize(data?.fetchBoard.contents),
+                        }}
+                    />
+                )} 
             </div>
         </>
     )
