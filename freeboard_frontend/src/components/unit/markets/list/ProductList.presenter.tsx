@@ -45,6 +45,7 @@ export default function ProductListUI (props) {
 
         
             <Button onClick={props.onClickMoveToCreateProduct}>등록하기</Button>
+            {/* <WatchedProduct  ></WatchedProduct> */}
         </Wrapper>
     )
 }

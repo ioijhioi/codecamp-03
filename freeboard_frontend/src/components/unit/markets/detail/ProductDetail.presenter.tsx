@@ -22,9 +22,12 @@ import {
     Content,
     Tags,
     Map,
-    Botton,
+    Bottom,
+    GoToList,
+    Edit,
 
 } from './ProductDetail.styles'
+// import DomPurify from "dompurify"
 
 
 export default function ProductDetailUI (props) {
@@ -35,8 +38,8 @@ export default function ProductDetailUI (props) {
                 <HeaderLeft>    
                     <Icon src="/images/product/sellericon.png"></Icon>
                     <SellerInformation>
-                        <Seller>판매자</Seller>
-                        <UpdatedAt>Date: 2021.02.18</UpdatedAt>
+                        <Seller>123</Seller>
+                        <UpdatedAt>Date:{props.data?.fetchUseditem.createdAt.slice(0, 10)}</UpdatedAt>
                     </SellerInformation>
                 </HeaderLeft>
                 <Right>
@@ -47,28 +50,27 @@ export default function ProductDetailUI (props) {
             <Body>
                 <ProductHeader>
                     <Product>
-                        <Remarks>2019 LTE 32GB</Remarks>
-                        <Name>삼성전자 갤럭시 탭A 10.1</Name>
+                        <Remarks>{props.data?.fetchUseditem.remarks}</Remarks>
+                        <Name>{props.data?.fetchUseditem.name}</Name>
                     </Product>
                     <Like>
                         <LikeIcon src="/images/product/likeheart.png"/>
-                        <PickedCount>20</PickedCount>
+                        <PickedCount>{props.data?.fetchUseditem.pickedCount}</PickedCount>
                     </Like>
                 </ProductHeader>
                 <ProductBody>
-                    <Price>240,120원</Price>
+                    <Price>{props.data?.fetchUseditem.price}</Price>
                     <Image></Image>
-                    <Content>액정에 잔기스랑 주변부 스크레치있습니다만 예민하신분아니면
-                        전현 신경쓰이지 않을정도입니다. 박스 보관중입니다
-                        메모용과,,,,,,,
+                    <Content>{props.data?.fetchUseditem.contents}
                     </Content>
-                    <Tags>#삼성전자 #겔럭시탭 #갓성비</Tags>
+                    <Tags>{props.data?.fetchUseditem.tags}</Tags>
                     <Map></Map>
                 </ProductBody>
             </Body>
-            <Botton>
-
-            </Botton>
+            <Bottom>
+                <GoToList onClick={props.onClickMoveToList}>목록으로</GoToList>
+                <Edit >수정하기</Edit>
+            </Bottom>
         </Wrapper>
     )
 }

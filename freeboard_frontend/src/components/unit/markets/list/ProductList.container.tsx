@@ -1,12 +1,13 @@
 import { useRouter } from 'next/router'
 import ProductListUI from "./ProductList.presenter"
 import {useQuery} from "@apollo/client"
-import {FETCH_USED_ITEMS, } from "./ProductList.queries"
+import {FETCH_USED_ITEMS, FETCH_USED_ITEMS_OF_THE_BEST } from "./ProductList.queries"
 
 
 export default function ProductList (){
-    const router = useRouter();
-    const { data } =useQuery (FETCH_USED_ITEMS)
+    const router =  useRouter();
+    const { data } = useQuery (FETCH_USED_ITEMS)
+    const { data: datafetchUseditemsOfTheBest} = useQuery (FETCH_USED_ITEMS_OF_THE_BEST)
 
     console.log(data);
 
@@ -40,6 +41,7 @@ export default function ProductList (){
             data={data}
             onClickMoveToDetail={onClickMoveToDetail}
             onClickMoveToCreateProduct={onClickMoveToCreateProduct}
+            datafetchUseditemsOfTheBest={datafetchUseditemsOfTheBest}
         
         />
     )

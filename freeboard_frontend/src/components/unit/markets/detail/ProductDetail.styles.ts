@@ -154,6 +154,22 @@ export const Map = styled.div`
     
 `
 
-export const Botton = styled.div`
+export const Bottom = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    /* background-color: skyblue; */
+    justify-content: center;
+`
 
+export const GoToList = styled.button`
+    width: 179px;
+    height: 52px;
+    background-color: gray;
+    margin-right: 15px;
+`
+export const Edit = styled.button`
+    width: 179px;
+    height: 52px;
+    background-color: gray;
 `

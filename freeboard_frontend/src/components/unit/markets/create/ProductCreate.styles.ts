@@ -1,5 +1,14 @@
 import styled from '@emotion/styled';
 
+import dynamic from "next/dynamic";
+
+const ReactQuill = dynamic (() => import("react-quill"), { ssr: false})
+
+export const ReactQuillBox = styled(ReactQuill)`
+    width: 100%;
+    height: 400px;
+`
+
 export const Wrapper = styled.div`
     width: 1200px;
     border: 1px solid black;
@@ -33,6 +42,8 @@ export const Label = styled.div`
     margin-top: 10px;
     
 `
+
+
 
 export const Tool = styled.div`
     width: 100%;

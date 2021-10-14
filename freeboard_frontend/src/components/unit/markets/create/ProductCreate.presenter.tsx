@@ -4,8 +4,9 @@ import {
     Title,
     ItemWrapper,
     Label,
-    Tool,
-    ToolBox,
+    ReactQuillBox,
+    // Tool,
+    // ToolBox,
     // Content,
     MapWrapper,
     MapBox,
@@ -25,6 +26,8 @@ import {
     
 } from './ProductCreate.styles'
 import Box from '../../../commons/inputs/CreateUseIteminput01/CreateUseIteminput01'
+import "react-quill/dist/quill.snow.css"
+
 
 export default function ProductCreateUI (props) {
 
@@ -50,14 +53,9 @@ export default function ProductCreateUI (props) {
                 </ItemWrapper>
                 <ItemWrapper>
                     <Label>상품 설명</Label>
-                    <Tool>
-                        <ToolBox></ToolBox>
-                        <Box 
-                            type="text"
-                            placeholder="상품을 설명해주세요" 
-                            register={props.register("contents")}
-                        />
-                    </Tool>
+                    <ReactQuillBox onChange={props.onChangeMyEditor}/>
+                        
+                    
                 </ItemWrapper>
                 <ItemWrapper>
                     <Label>판매 가격 </Label>

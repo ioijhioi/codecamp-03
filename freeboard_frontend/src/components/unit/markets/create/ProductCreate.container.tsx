@@ -6,9 +6,10 @@ import { CREATE_USED_ITEM } from "./ProductCreate.queries"
 import { useMutation} from "@apollo/client"
 import { useRouter} from "next/router"
 
+
 export default function ProductCreate() {
     const router = useRouter()
-    const { handleSubmit, register, formState} = useForm ({
+    const { handleSubmit, register, formState, setValue, trigger} = useForm ({
         mode: "onChange",
         resolver: yupResolver(schema),
     })
@@ -28,6 +29,11 @@ export default function ProductCreate() {
         router.push(`/markets/${result.data?.createUseditem._id}`)
         alert("게시물을 등록합니다")
     } 
+    function onChangeMyEditor (value) {
+        setValue('contents', value === "<p><br></p>" ? "" : value);
+        console.log(value);
+        trigger("contents");
+    }
 
 
     return (
@@ -36,6 +42,7 @@ export default function ProductCreate() {
             register={register}
             formState={formState}
             onClickSubmit={onClickSubmit}
+            onChangeMyEditor={onChangeMyEditor}
         />
     )
 }

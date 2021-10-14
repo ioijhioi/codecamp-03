@@ -8,12 +8,19 @@ export default function ProductDetail (){
 
     const {data} = useQuery (FETCH_USED_ITEM, {
         variables: {
-            useditemId: String(router.query.useditemId),
+            useditemId: router.query.productId,
         },
     });
     console.log(data, router);
 
-    
+    function onClickMoveToList () {
+        router.push(`markets/`)
+    }
 
-    return <ProductDetailUI data={data}/>
+    return ( 
+        <ProductDetailUI 
+            data={data}
+            onClickMoveToList={onClickMoveToList}
+        />
+    )
 }
