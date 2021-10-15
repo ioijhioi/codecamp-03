@@ -9,7 +9,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { createUploadLink } from 'apollo-upload-client'
 import { createContext, useEffect, useState } from 'react';
-
+// import Head from 'next/head'
 
 export const firebaseApp = initializeApp ({
   apiKey: "AIzaSyDXffKZN458jg79onQiV0Du8aQCRqjpoK4",
@@ -55,13 +55,14 @@ export const firebaseApp = initializeApp ({
 
   return (
     <GlobalContext.Provider value={value}>
-      <Global styles={globalStyles} />
-      <ApolloProvider client={client}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </ApolloProvider>
+        <Global styles={globalStyles} />
+        <ApolloProvider client={client}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </ApolloProvider>
     </GlobalContext.Provider>
+    
   );
 }
 
