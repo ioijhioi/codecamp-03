@@ -1,6 +1,14 @@
 import styled from '@emotion/styled';
 import { useEffect, useState } from 'react';
 
+  export const todayBox = styled.div`
+    width: 196px;
+    position: sticky;
+    bottom: 50px;
+    left: 3000px;
+    box-sizing: border-box;
+   `
+
 export default function BasketPage() {
     const [ basketItems, setBasketItems] = useState([])
     
@@ -9,13 +17,7 @@ export default function BasketPage() {
       setBasketItems(items);
     }, [])
   
-   const todayBox = styled.div`
-    width: 196px;
-    position: sticky;
-    bottom: 50px;
-    left: 3000px;
-    box-sizing: border-box;
-   `
+   
   
     
    
@@ -26,7 +28,7 @@ export default function BasketPage() {
   
     return (
       <todayBox>
-        {/* detail
+        detail
         <Title>오늘 본 상품</Title>
         {basketItems?.map((el: any) => (
           <RecentBox key={el._id}>
@@ -42,7 +44,7 @@ export default function BasketPage() {
             <Price>{el.price}</Price>
             <Tag>{el.tags}</Tag>
           </RecentBox>
-        ))} */}
+        ))}
       </todayBox>
     );
 }
