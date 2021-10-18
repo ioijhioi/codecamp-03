@@ -32,9 +32,10 @@ import "react-quill/dist/quill.snow.css"
 export default function ProductCreateUI (props) {
 
     return (
-        <form onSubmit={props.handleSubmit(props.onClickSubmit)}>
+        <form onSubmit={props.handleSubmit(
+            props.isEdit ? props.onClickSubmit : props.onClickSubmit)}>
             <Wrapper>
-                <Title>상품 등록하기</Title>
+                <Title>{props.isEdit ? "상품 수정하기" : "상품 등록하기"}</Title>
                 <ItemWrapper>   
                     <Label>상품명</Label>
                     <Box 
@@ -107,7 +108,7 @@ export default function ProductCreateUI (props) {
                     <RadioLabel>사진2</RadioLabel>
                 </MainPhotoWrapper>
                 <ButtonWrapper>
-                    <SubmitButton type="submit" name="등록하기" isValid={props.formState.isValid}/>
+                    <SubmitButton type="submit" name={props.isEdit ? "수정하기" : "등록하기"} isValid={props.formState.isValid}/>
 
                 </ButtonWrapper>
             </Wrapper>

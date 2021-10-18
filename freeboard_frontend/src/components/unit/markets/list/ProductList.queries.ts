@@ -16,15 +16,15 @@ export const FETCH_USED_ITEMS = gql `
     }
 `
 
-export const FETCH_USED_ITEMS_OF_THE_BEST = gql`
-    query fetchUseditemsOfTheBest {
-        fetchUseditemsOfTheBest {
-            _id
-            remarks
-            tags
-            pickedCount
-            price
+// export const FETCH_USED_ITEMS_OF_THE_BEST = gql`
+//     query fetchUseditemsOfTheBest {
+//         fetchUseditemsOfTheBest {
+//             _id
+//             remarks
+//             tags
+//             pickedCount
+//             price
 
-        }
-    }
-`
+//         }
+//     }
+// `

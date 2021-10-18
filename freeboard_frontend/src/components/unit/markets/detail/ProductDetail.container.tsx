@@ -17,10 +17,15 @@ export default function ProductDetail (){
         router.push(`markets/`)
     }
 
+    function onClickMoveToEdit () {
+        router.push(`markets/${router.query.productId}/edit`);
+    }
+
     return ( 
         <ProductDetailUI 
             data={data}
             onClickMoveToList={onClickMoveToList}
+            onClickMoveToEdit={onClickMoveToEdit}
         />
     )
 }

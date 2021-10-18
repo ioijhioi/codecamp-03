@@ -172,4 +172,12 @@ export const Edit = styled.button`
     width: 179px;
     height: 52px;
     background-color: gray;
+    margin-right: 15px;
+`
+
+export const Delete = styled.button`
+     width: 179px;
+    height: 52px;
+    background-color: gray;
+
 `

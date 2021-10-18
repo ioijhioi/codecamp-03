@@ -1,26 +1,35 @@
 import styled from '@emotion/styled';
 
+
 export const Wrapper = styled.div`
     width: 1200px;
-    height: 5000px;
     /* background-color: skyblue; */
     display:flex;
     align-items: center;
     flex-direction: column;
 `
 
-export const Header = styled.div`
-    width: 175px;
-    height: 42px;
-    font-size: 30px;
-    text-align: center;
-`
 
-export const BestProduct = styled.div `
+export const BestProduct = styled.div`
     width: 282px;
     height: 391px;
-    /* background-color: blue; */
+    background-color: skyblue;
+    margin-bottom: 50px;
+`
+
+export const ProductName = styled.div `
+    width: 100%;
+    height: 55px;
+    background-color: blue;
     display: flex;
+    border-bottom: 1px solid #bdbdbd;
+`
+
+
+
+export const SellingProduct =styled.div`
+`
+export const SoldProduct = styled.div`
 `
 
 export const Row = styled.div`
@@ -29,6 +38,8 @@ export const Row = styled.div`
     display: flex;
     flex-direction:row;
     margin-top: 20px;
+    
+    border-bottom: 1px solid #bdbdbd;
     /* background-color: orange; */
 `
 
@@ -54,13 +65,14 @@ export const ProductLeft = styled.div`
 `
 
 export const Name = styled.span`
-
+    font-size: 24px;
 `
 export const Remarks = styled.span`
-
+    font-size: 16px;
 `
 export const Tags = styled.span`
-
+    font-size: 16px;
+    line-height: 24px;
 `
 export const SellerWrapper = styled.div`
     width:100%;
@@ -69,16 +81,25 @@ export const SellerWrapper = styled.div`
     /* background-color: gray; */
 `
 export const Seller = styled.span`
-    
+    font-size: 16px;
+    text-align: right;
     /* background-color:green; */
 `
 export const PickedCount = styled.div`
-    /* background-color: blue; */
+    font-size: 16px;
+
 `
 
 export const ProductRight = styled.div`
     width: 200px;
     display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+`
+
+export const PriceIcon = styled.img`
+    width: 18px;
+    height: 18px;
 `
 export const Button = styled.button`
     width: 171px;

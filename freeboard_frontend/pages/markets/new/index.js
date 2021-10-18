@@ -2,7 +2,7 @@ import ProductCreate from "../../../src/components/unit/markets/create/ProductCr
 import { withAuth} from '../../../src/components/commons/hocs/withAuth'
 
 const MarketPage = () => {
-    return <ProductCreate />
+    return <ProductCreate isEdit={false} />
 }
 
 export default withAuth(MarketPage)

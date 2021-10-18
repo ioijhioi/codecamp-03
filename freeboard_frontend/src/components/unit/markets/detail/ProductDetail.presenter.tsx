@@ -25,6 +25,7 @@ import {
     Bottom,
     GoToList,
     Edit,
+    Delete,
 
 } from './ProductDetail.styles'
 // import DomPurify from "dompurify"
@@ -69,7 +70,8 @@ export default function ProductDetailUI (props) {
             </Body>
             <Bottom>
                 <GoToList onClick={props.onClickMoveToList}>목록으로</GoToList>
-                <Edit >수정하기</Edit>
+                <Edit onClick={props.onClickMoveToEdit} >수정하기</Edit>
+                <Delete onClick={props.onClickMoveToDelete}> 삭제하기</Delete>
             </Bottom>
         </Wrapper>
     )
