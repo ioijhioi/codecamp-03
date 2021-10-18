@@ -19,14 +19,14 @@ export const Wrapper = styled.div`
 //   display:flex;
 //   font-family: "my-font";
 // `
-export const Button = styled.button`
+export const Button = styled.div`
   width: 200px;
   height: 60px;
   cursor: pointer;
   display: flex;
 `
 
-export const LogoBox = styled.div`
+export const LogoBox = styled.img`
   width: 250px;
   height: 60px;
   
@@ -37,7 +37,7 @@ export const LoginInformation = styled.div`
   width: 250px;
   display: flex;
   flex-direction: row;
-  background-color: skyblue;
+  /* background-color: skyblue; */
   justify-content: flex-end;
 `
 
