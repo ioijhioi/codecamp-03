@@ -9,9 +9,9 @@ import {
     // ToolBox,
     // Content,
     MapWrapper,
-    MapBox,
-    Map,
-    GpsAddress,
+    // MapBox,
+    // Map,
+    // GpsAddress,
     // GPS,
     // // InputGPS,
     // // LAT,
@@ -27,13 +27,14 @@ import {
 } from './ProductCreate.styles'
 import Box from '../../../commons/inputs/CreateUseIteminput01/CreateUseIteminput01'
 import "react-quill/dist/quill.snow.css"
+import KakaoMapPage from '../../../commons/map/index'
 
 
 export default function ProductCreateUI (props) {
 
     return (
         <form onSubmit={props.handleSubmit(
-            props.isEdit ? props.onClickSubmit : props.onClickSubmit)}>
+            props.isEdit ? props.onClickeEdit : props.onClickSubmit)}>
             <Wrapper>
                 <Title>{props.isEdit ? "상품 수정하기" : "상품 등록하기"}</Title>
                 <ItemWrapper>   
@@ -41,7 +42,8 @@ export default function ProductCreateUI (props) {
                     <Box 
                         type="text"  
                         placeholder="상품명을 작성해주세요" 
-                        register={props.register("name")}
+                        register={props.register("name")
+                    }
                     />
                 </ItemWrapper>
                 <ItemWrapper>
@@ -75,26 +77,10 @@ export default function ProductCreateUI (props) {
                     />
                 </ItemWrapper>
                 <MapWrapper>
-                    <MapBox>
-                        <Label>거래위치 </Label>
-                        <Map>지도화면입니다.</Map>
-                    </MapBox>
-                    <GpsAddress>
-                        {/* <GPS> */}
-                            <Label>GPS</Label>
-                            {/* <InputGPS>
-                                <LAT></LAT>
-                                <div></div>
-                                <LNG></LNG>
-                            </InputGPS> */}
-                        {/* </GPS> */}
-                        {/* <Adress> */}
-                            <Label>주소</Label>
-                            {/* <InputAddress>
-                            </InputAddress>
-                            < */}
-                        {/* </Adress> */}
-                    </GpsAddress>
+                    <KakaoMapPage />
+                        
+                    
+                   
                 </MapWrapper>
                 <PhotoWrapper>
                     <Label>사진 첨부</Label>

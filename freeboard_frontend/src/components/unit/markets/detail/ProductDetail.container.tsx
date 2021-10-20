@@ -14,12 +14,14 @@ export default function ProductDetail (){
     console.log(data, router);
 
     function onClickMoveToList () {
-        router.push(`markets/`)
+        router.push(`/markets`)
     }
 
     function onClickMoveToEdit () {
-        router.push(`markets/${router.query.productId}/edit`);
+        router.push(`/markets/${router.query.productId}/edit`);
     }
+
+    console.log(data)
 
     return ( 
         <ProductDetailUI 

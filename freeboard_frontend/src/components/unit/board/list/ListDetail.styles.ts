@@ -49,7 +49,7 @@ export const Search = styled.input`
 export const SearchButton = styled.div`
   
   padding: 14px 16px;
-  background-color: black;
+  background-color: gray;
   width: 120px;
 `
 

@@ -68,7 +68,7 @@ export const Content = styled.textarea`
 export const MapWrapper = styled.div`
     width: 100%;
     height: 300px;
-    background-color: greenyellow;
+    /* background-color: greenyellow; */
     display: flex;
     flex-direction: row;
     /* justify-content: space-between; */

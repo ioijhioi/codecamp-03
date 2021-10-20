@@ -1,4 +1,81 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import styled from "@emotion/styled"
+
+const Wrapper = styled.div`
+    width: 996px;
+    /* background-color: yellow; */
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    margin-top: 5px;
+    
+`
+
+const MapLeft = styled.div`
+    width: 384px;
+    height: 292px;
+    /* background-color: green; */
+    display:flex;
+    flex-direction:column;
+`
+const Label = styled.div`
+    padding-bottom: 16px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 10px;
+    
+`
+const Map = styled.div`
+    width: 384px;
+    height: 252px;
+    /* background-color: red; */
+    margin-bottom: 5px;
+`
+const MapRight = styled.div`
+    width: 588px;
+    height: 292px;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+`
+
+const GPS = styled.div`
+    width: 272px;
+    height: 92px;
+    /* background-color: red; */
+    display:flex;
+    flex-direction:column;
+`
+const Location = styled.div`
+    width: 272px;
+    height: 52px;
+    /* background-color: green; */
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+`
+const Longitudela = styled.input`
+    width: 108px;
+    height: 52px;
+    /* background-color: gold; */
+`
+const LongitudeImg = styled.img`
+    width: 14px;
+    height: 20px;
+    margin-top: 10px;
+`
+const Longitudema = styled.input`
+    width: 108px;
+    height: 52px;
+    /* background-color: gold; */
+`
+
+const Address = styled.div`
+    width: 588px;
+    height: 160px;
+    /* background-color: purple; */
+`
 
 declare const window: typeof globalThis & {
     kakao: any;
@@ -6,6 +83,8 @@ declare const window: typeof globalThis & {
 
 export default function KakaoMapPage (){
 
+    const [la, setLa] = useState()
+    const [ma, setMa] = useState()
     useEffect (() => {
         
         const script = document.createElement("script")
@@ -41,6 +120,9 @@ export default function KakaoMapPage (){
                     
                     // 마커 위치를 클릭한 위치로 옮깁니다
                     marker.setPosition(latlng);
+                    console.log(latlng)
+                    setLa(latlng.La)
+                    setMa(latlng.Ma)
     //                 var message = '클릭한 위치의 위도는 ' + latlng.getLat() + ' 이고, ';
     // message += '경도는 ' + latlng.getLng() + ' 입니다';
     
@@ -53,9 +135,28 @@ export default function KakaoMapPage (){
         };
     }, []);
     return (
-        <>
-            
-            <div id="map" style={{width:"500px", height:"400px"}}></div>
-        </>
+        <Wrapper>
+            <MapLeft>
+                <Label>거래위치</Label>
+                <Map id="map" />
+            </MapLeft>
+           
+            <MapRight>
+                <GPS>
+                    <Label>GPS</Label>
+                    <Location>
+                        <Longitudela placeholder="위도" value={la}/>
+                        <LongitudeImg src="/images/gps.png"/>
+                        <Longitudema placeholder="경도" value={ma}/>
+                    </Location>
+                </GPS>
+                <Address>
+
+                </Address>
+            </MapRight>
+            {/* <Input style={{width:"100px"}} value={la} />
+
+            <input value={ma} /> */}
+        </Wrapper>
     );
 }

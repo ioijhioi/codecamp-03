@@ -44,7 +44,7 @@ export default function ListDetailUI(props) {
               type="text" 
               placeholder="🔎제목을 검색해주세요"
               onChange={props.onChangeSearch}/>
-            <SearchButton onClick={props.onClickSearch}/>
+            <SearchButton onClick={props.onClickSearch}>검색하기 </SearchButton>
           </InputBottonWrapper>
         </BottonHeader>
         <BottonBody>
