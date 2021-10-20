@@ -5,19 +5,19 @@ export default function LayoutNavigationUI(props: ILayoutNavigationUIProps) {
   return (
     <Wrapper>
       <MenuItem id="/maps" onClick={props.onClickMenu}>
-        🏖캠핑 지도
+        🏖Camping Map
       </MenuItem>
       <>|</>
       <MenuItem id="/boards" onClick={props.onClickMenu}>
-        🙋‍♂️자유게시판
+        🙋‍♂️Freeboard
       </MenuItem>
       <>|</>
       <MenuItem id="/markets" onClick={props.onClickMenu}>
-        🎁라이브상품
+        🎁Campingproduct
       </MenuItem>
       <>|</>
       <MenuItem id="/mypages" onClick={props.onClickMenu}>
-        📃마이페이지
+        📃My page
       </MenuItem>
     </Wrapper>
   );

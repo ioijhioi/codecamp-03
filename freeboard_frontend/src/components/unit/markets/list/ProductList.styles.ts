@@ -7,7 +7,12 @@ export const Wrapper = styled.div`
     display:flex;
     align-items: center;
     flex-direction: column;
+    margin-top: 50px;
+    padding-top: 80px;
+    border-top: 1px solid  #bdbdbd;
 `
+
+
 
 
 export const BestProduct = styled.div`
@@ -20,7 +25,7 @@ export const BestProduct = styled.div`
 export const ProductName = styled.div `
     width: 100%;
     height: 55px;
-    background-color: blue;
+    /* background-color: blue; */
     display: flex;
     border-bottom: 1px solid #bdbdbd;
 `
@@ -45,8 +50,9 @@ export const Row = styled.div`
 
 export const Images = styled.div`
     width: 160px;
-    height: 160px;
-    /* background-color: purple; */
+    height: 150px;
+    background-color: gray;
+    margin-bottom: 5px;
 `
 
 export const Product = styled.div`

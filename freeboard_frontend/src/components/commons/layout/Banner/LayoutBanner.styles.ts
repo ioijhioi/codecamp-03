@@ -8,7 +8,8 @@ export const Wrapper = styled.div`
 `;
 
 export const SliderItem = styled.img`
-  height: 500px;
+  width: 1000px;
+  height: 600px;
   margin: auto;
 `;
 

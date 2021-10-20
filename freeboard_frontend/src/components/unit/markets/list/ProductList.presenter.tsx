@@ -1,5 +1,6 @@
 import {
     Wrapper,
+    
     BestProduct,
     ProductName,
     // ProductWrapper,
@@ -24,10 +25,11 @@ export default function ProductListUI (props) {
 
     return (
         <Wrapper>
+           
             <BestProduct/>
             <ProductName>
-                <SellingProduct />
-                <SoldProduct/>
+                <SellingProduct> 판매중상품 </SellingProduct>
+                <SoldProduct>판매된상품</SoldProduct>
             </ProductName>
             
       

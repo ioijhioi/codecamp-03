@@ -26,6 +26,14 @@ export const Button = styled.div`
   display: flex;
 `
 
+export const HeaderSearch = styled.input`
+  width: 350px;
+  height:40px;
+  cursor: pointer;
+  margin-top: 13px;
+  border-radius: 10px;
+`
+
 export const LogoBox = styled.img`
   width: 250px;
   height: 60px;
@@ -37,6 +45,7 @@ export const LoginInformation = styled.div`
   width: 250px;
   display: flex;
   flex-direction: row;
+  align-items: center;
   /* background-color: skyblue; */
   justify-content: flex-end;
 `
@@ -57,3 +66,10 @@ export const CreateButton = styled.div`
   align-items:flex-end;
 `
 
+export const ADVBox = styled.div`
+    width: 196px;
+    position: sticky;
+    bottom: 50px;
+    left: 3000px;
+    background-color: blue;
+`
