@@ -1,81 +1,19 @@
 import { useEffect, useState } from 'react';
-import styled from "@emotion/styled"
+import {
+    Wrapper,
+    MapLeft,
+    Label,
+    Map,
+    MapRight,
+    GPS,
+    Location,
+    Longitudela,
+    LongitudeImg,
+    Longitudema,
+    Address,
+} from "./map.styles"
 
-const Wrapper = styled.div`
-    width: 996px;
-    /* background-color: yellow; */
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    
-    margin-top: 5px;
-    
-`
 
-const MapLeft = styled.div`
-    width: 384px;
-    height: 292px;
-    /* background-color: green; */
-    display:flex;
-    flex-direction:column;
-`
-const Label = styled.div`
-    padding-bottom: 16px;
-    font-size: 16px;
-    font-weight: 500;
-    margin-top: 10px;
-    
-`
-const Map = styled.div`
-    width: 384px;
-    height: 252px;
-    /* background-color: red; */
-    margin-bottom: 5px;
-`
-const MapRight = styled.div`
-    width: 588px;
-    height: 292px;
-    /* background-color: blue; */
-    display: flex;
-    flex-direction: column;
-`
-
-const GPS = styled.div`
-    width: 272px;
-    height: 92px;
-    /* background-color: red; */
-    display:flex;
-    flex-direction:column;
-`
-const Location = styled.div`
-    width: 272px;
-    height: 52px;
-    /* background-color: green; */
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-`
-const Longitudela = styled.input`
-    width: 108px;
-    height: 52px;
-    /* background-color: gold; */
-`
-const LongitudeImg = styled.img`
-    width: 14px;
-    height: 20px;
-    margin-top: 10px;
-`
-const Longitudema = styled.input`
-    width: 108px;
-    height: 52px;
-    /* background-color: gold; */
-`
-
-const Address = styled.div`
-    width: 588px;
-    height: 160px;
-    /* background-color: purple; */
-`
 
 declare const window: typeof globalThis & {
     kakao: any;
