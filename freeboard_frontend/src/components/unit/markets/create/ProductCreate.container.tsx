@@ -61,7 +61,7 @@ export default function ProductCreate(props: any) {
             onClickSubmit={onClickSubmit}
             onClickUpdateProduct={onClickUpdateProduct}
             onChangeMyEditor={onChangeMyEditor}
-            // isEdit={props.isEdit}
+            isEdit={props.isEdit}
         />
     )
 }

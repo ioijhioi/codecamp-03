@@ -8,7 +8,7 @@ export default function ProductDetail (){
 
     const {data} = useQuery (FETCH_USED_ITEM, {
         variables: {
-            useditemId: router.query.productId,
+            useditemId: router.query.useditemId,
         },
     });
     console.log(data, router);
@@ -18,7 +18,7 @@ export default function ProductDetail (){
     }
 
     function onClickMoveToEdit () {
-        router.push(`/markets/${router.query.productId}/edit`);
+        router.push(`/markets/${router.query.useditemId}/edit`);
     }
 
     console.log(data)
