@@ -144,6 +144,7 @@ export const RealPhoto = styled.img`
     width: 384px;
     height: 384px;
     margin-top: 80px;
+    display: flex;
 `
 
 export const Content = styled.div`

@@ -15,7 +15,9 @@ export default function ProductCommentList (props) {
     const router = useRouter();
     const {data, fetchMore }= useQuery(FETCH_USED_ITEM_QUESTIONS ,
         {
-            variables : router.query.number,
+            variables : {
+                useditemId: router.query.useditemId,
+            },
         });
     console.log(data)
     // const { data: answersData } = useQuery(FETCH_USED_ITEM_QUESTION_ANSWERS, {
@@ -25,6 +27,23 @@ export default function ProductCommentList (props) {
     // function onClickEdit() {
     //     setIsEdit(true);
     // }
+
+    function onLoadMore () {
+        if (!data) return;
+        fetchMore ({
+            variables: { 
+                page: Math.ceil(data?.fetchUseditemQuestions.length / 10 ) + 1, 
+            },
+            updateQuery: (prev: any, { fetchMoreResult }) =>{
+                return {
+                    fetchUseditemQuestions: [
+                        ...prev.fetchUseditemQuestions,
+                        ...fetchMoreResult.fetchUseditemQuestions,
+          ],
+        };
+      },
+        })
+    }
 
     function onClickDelete(event) {
         deleteUseditemQuestion({

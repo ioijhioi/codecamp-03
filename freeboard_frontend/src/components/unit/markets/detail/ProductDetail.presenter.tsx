@@ -64,8 +64,8 @@ export default function ProductDetailUI (props) {
                     <Price>{props.data?.fetchUseditem.price}</Price>
                     <Image>
                         {props.data?.fetchUseditem.images
-                            ?.filter((el) => el )
-                            .map((el) => (
+                            ?.filter((el: string) => el !== "" )
+                            .map((el: string) => (
                                 <RealPhoto 
                                     key={el}
                                     src={`https://storage.googleapis.com/${el}`}
@@ -84,9 +84,7 @@ export default function ProductDetailUI (props) {
                 <Edit onClick={props.onClickMoveToEdit} >수정하기</Edit>
                 <Delete onClick={props.onClickMoveToDelete}> 삭제하기</Delete>
             </Bottom>
-            {/* <MarketsComment>
-                댓글창입니다
-            </MarketsComment> */}
+           
         </Wrapper>
     )
 }

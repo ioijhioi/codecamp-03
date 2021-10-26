@@ -48,12 +48,26 @@ export const Row = styled.div`
     /* background-color: orange; */
 `
 
-export const Images = styled.div`
+export const Images = styled.img`
+    width: 160px;
+    height: 150px;
+    /* background-color: gray; */
+    margin-bottom: 5px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 16px;
+    
+`
+
+export const ImagesNone = styled.div`
     width: 160px;
     height: 150px;
     background-color: gray;
+    text-align: center;
+    color: #ffffff;
+    font-size: 16px;
     margin-bottom: 5px;
-`
+    `
 
 export const Product = styled.div`
     width: 100%;

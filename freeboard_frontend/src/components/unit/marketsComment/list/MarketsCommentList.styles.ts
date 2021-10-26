@@ -2,13 +2,13 @@ import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
     width: 1200px;
-    height: 100%;
+    height: 200px;
     margin: 0 auto;
     padding: 0 30px;
     display: flex;
     flex-direction: row;
     border-bottom: 1px solid lightgray;
-    background-color: blue;
+    /* background-color: blue; */
 `
 
 export const CommentMap = styled.div`

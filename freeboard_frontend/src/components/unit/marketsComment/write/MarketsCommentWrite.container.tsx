@@ -26,13 +26,15 @@ export default function MarketsComment (props){
         setContents(event.target.value);
     }
     
-    function onClickQuestion() {
-        createUseditemQuestion({
-            variables: {
-              useitemId: router.query.number,
+    async function onClickQuestion() {
+      console.log("123", router.query.useditemId)
+      try {
+        await createUseditemQuestion({
+          variables: {
+              useditemId: router.query.useditemId,
               createUseditemQuestionInput: {
-                  contents: contents,
-              }
+                  contents
+              },
             },
             refetchQueries: [
               {
@@ -40,8 +42,11 @@ export default function MarketsComment (props){
                 variables: { useditemId: router.query.useditemId },
               },
             ],
-          });
-          alert("댓글을 등록합니다");
+        });
+        alert("댓글을 등록합니다");
+      } catch (error) {
+        alert(error.message);
+      }
     }
 
     // function onClickQuestionEdit(event) {

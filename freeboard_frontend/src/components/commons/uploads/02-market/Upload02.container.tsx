@@ -13,8 +13,8 @@ export default function Upload02 (props: IUploads02Props){
     }
 
     async function onChangeFile(event:ChangeEvent<HTMLInputElement>) {
-        const file = checkValidationImage(event.target.files?.[0])
-        if ( !file) return;
+        const file =event.target.files?.[0]
+        if ( !checkValidationImage(file)) return;
 
         const fileReader = new FileReader();
         fileReader.readAsDataURL(file);
