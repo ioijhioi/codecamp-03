@@ -19,6 +19,7 @@ import {
     ProductBody,
     Price,
     Image,
+    RealPhoto,
     Content,
     Tags,
     Map,
@@ -61,7 +62,17 @@ export default function ProductDetailUI (props) {
                 </ProductHeader>
                 <ProductBody>
                     <Price>{props.data?.fetchUseditem.price}</Price>
-                    <Image></Image>
+                    <Image>
+                        {props.data?.fetchUseditem.images
+                            ?.filter((el) => el )
+                            .map((el) => (
+                                <RealPhoto 
+                                    key={el}
+                                    src={`https://storage.googleapis.com/${el}`}
+                                />
+                            ))
+                        }
+                    </Image>
                     <Content>{props.data?.fetchUseditem.contents}
                     </Content>
                     <Tags>{props.data?.fetchUseditem.tags}</Tags>

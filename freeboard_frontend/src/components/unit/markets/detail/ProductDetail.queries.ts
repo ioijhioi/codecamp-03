@@ -13,10 +13,11 @@ export const FETCH_USED_ITEM = gql `
             price
             pickedCount
             tags
-            useditemAddress {
-                lat
-                ing
-            }
+            # useditemAddress {
+            #     lat
+            #     ing
+            # }
+            images
         }
     }
 `

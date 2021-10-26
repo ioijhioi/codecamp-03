@@ -135,9 +135,15 @@ export const Price = styled.div`
 export const Image = styled.div`
     width:400px;
     height:500px;
-    background-color:yellow;
+    /* background-color:yellow; */
     display: flex;
     align-items: center;
+`
+
+export const RealPhoto = styled.img`
+    width: 384px;
+    height: 384px;
+    margin-top: 80px;
 `
 
 export const Content = styled.div`

@@ -107,6 +107,10 @@ export const PhotoWrapper = styled.div`
     background-color: papayawhip;
 `
 
+export const PhotoHeader = styled.div`
+    display: flex;
+`
+
 export const MainPhotoWrapper = styled.div`
     width: 100%;
     height: 100px;

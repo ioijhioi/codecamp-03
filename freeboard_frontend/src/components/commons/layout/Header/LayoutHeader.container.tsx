@@ -7,7 +7,7 @@ import {GlobalContext} from "../../../../../pages/_app"
 
 export default function LayoutHeader() {
   const router = useRouter();
-  const {accessToken, setUerInfo} = useContext(GlobalContext)
+  const {accessToken, setUserInfo} = useContext(GlobalContext)
   const {data} = useQuery(FETCH_USER_LOGGED_IN)
 
   // function onClickMoveToHome ( ) {
@@ -17,7 +17,7 @@ export default function LayoutHeader() {
   useEffect (() => {
     if (accessToken) return;
 
-    setUerInfo({
+    setUserInfo({
       email: data?.fetchUserLoggedIn.email,
       name: data?.fetchUserLoggedIn.name,
       picture: data?.fetchUserLoggedIn.picture,

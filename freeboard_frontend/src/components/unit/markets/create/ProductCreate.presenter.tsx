@@ -18,6 +18,7 @@ import {
     // // LNG,
     // Adress,
     PhotoWrapper,
+    PhotoHeader,
     MainPhotoWrapper,
     RadioButton,
     RadioLabel,
@@ -28,6 +29,7 @@ import {
 import Box from '../../../commons/inputs/CreateUseIteminput01/CreateUseIteminput01'
 import "react-quill/dist/quill.snow.css"
 import KakaoMapPage from '../../../commons/map/index'
+import Upload02 from '../../../commons/uploads/02-market/Upload02.container'
 
 
 export default function ProductCreateUI (props) {
@@ -84,7 +86,16 @@ export default function ProductCreateUI (props) {
                 </MapWrapper>
                 <PhotoWrapper>
                     <Label>사진 첨부</Label>
-                    
+                    <PhotoHeader>
+                        {new Array(3).fill(1).map((el, index) =>
+                            <Upload02 
+                                key={`${el}_${index}`}
+                                index={index}
+                                onChangeFiles={props.onChangeFiles}
+                                defaultFileUrl={props.data?.fetchUseditem.images?.[index]}
+                            />
+                        )}
+                    </PhotoHeader>
                 </PhotoWrapper>
                 <MainPhotoWrapper>
                     <Label>메인 사진 설정</Label>
