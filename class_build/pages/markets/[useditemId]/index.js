@@ -31,19 +31,18 @@ const FETCH_USEDITEM = gql `
 `
 
 
-export const getServerSideProps = async(context) => {
+export const getServerSideProps = async (context) => {
     // 여기서 1. graphql 데이터를 요청한다
     const result = await request (
         "https://backend03.codebootcamp.co.kr/graphql", 
-        FETCH_USEDITEM, { 
-        useditemId: context.query.useditemId,
-    })
+        FETCH_USEDITEM, 
+        { useditemId: context.query.useditemId,}
+    )
 
     // 2. 요청 받은 데이터를 페이지로 넘겨준다
     return {
         props: {
             fetchUseditem: result.fetchUseditem,
         },
-    },
-
+    };
 }
