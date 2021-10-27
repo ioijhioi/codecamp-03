@@ -28,7 +28,7 @@ export default function ProductCreate(props: any) {
 
     const {data} = useQuery (FETCH_USED_ITEM, {
         variables: {
-            useditemId: router.query.number,
+            useditemId: router.query.useditemId,
         },
     });
 

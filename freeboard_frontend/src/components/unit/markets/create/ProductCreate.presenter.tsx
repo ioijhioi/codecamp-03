@@ -92,7 +92,7 @@ export default function ProductCreateUI (props) {
                                 key={`${el}_${index}`}
                                 index={index}
                                 onChangeFiles={props.onChangeFiles}
-                                defaultFileUrl={props.data?.fetchUseditem.images?.[index]}
+                                defaultFileUrl={props.data?.fetchUseditem.images[index]}
                             />
                         )}
                     </PhotoHeader>

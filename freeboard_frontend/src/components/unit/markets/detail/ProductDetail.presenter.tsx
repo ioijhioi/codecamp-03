@@ -33,6 +33,7 @@ import {
 
 
 export default function ProductDetailUI (props) {
+    console.log("이미지: ", props)
 
     return (
         <Wrapper>
