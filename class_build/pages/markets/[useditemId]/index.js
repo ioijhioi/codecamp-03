@@ -1,5 +1,5 @@
 import Head from "next/head"
-import {gql, request} from "graphql-request"
+import {request, gql } from "graphql-request"
 
 export default function MarketsPage (props) {
 
