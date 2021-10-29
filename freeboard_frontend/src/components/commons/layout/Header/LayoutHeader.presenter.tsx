@@ -23,9 +23,13 @@ export default function LayoutHeaderUI(props: any) {
           placeholder="검색하기"
         />
         <LoginInformation>
-          <LoginButton onClick={props.onClickMoveToLoginPage}>로그인 </LoginButton>
-          <>|</>
-          <CreateButton onClick={props.onClickMoveToCreateUserPage}>회원가입</CreateButton>
+          {!props.accessToken && (
+            <>
+              <LoginButton onClick={props.onClickMoveToLoginPage}>로그인 </LoginButton>
+              <>|</>
+              <CreateButton onClick={props.onClickMoveToCreateUserPage}>회원가입</CreateButton>
+            </>
+          )}
         </LoginInformation>
         {/* <ADVBox/> */}
 

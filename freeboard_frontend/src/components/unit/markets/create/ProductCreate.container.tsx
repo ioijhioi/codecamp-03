@@ -96,7 +96,7 @@ export default function ProductCreate(props: any) {
         } catch (error) {
             console.log(error.message)
         }
-    }
+    };
 
 
     return (
