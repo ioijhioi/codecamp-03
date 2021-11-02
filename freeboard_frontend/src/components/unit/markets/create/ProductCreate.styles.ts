@@ -104,7 +104,7 @@ export const GpsAddress = styled.div`
 export const PhotoWrapper = styled.div`
     width: 100%;
     height: 250px;
-    background-color: papayawhip;
+    /* background-color: papayawhip; */
 `
 
 export const PhotoHeader = styled.div`
@@ -132,6 +132,6 @@ export const ButtonWrapper = styled.div`
     flex-direction: row;
     justify-content: center;
     padding-top: 80px;
-    background-color: pink;
+    /* background-color: pink; */
 `
 

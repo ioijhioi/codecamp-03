@@ -66,6 +66,17 @@ export const CreateButton = styled.div`
   align-items:flex-end;
 `
 
+export const MyPicture = styled.img`
+  height: 50px;
+  width: 50px;
+  margin-right: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  :hover {
+    height: 52px;
+    width: 52px;
+  }
+`
 export const ADVBox = styled.div`
     width: 196px;
     position: sticky;

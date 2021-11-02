@@ -5,6 +5,8 @@ interface IProps {
 }
 const Submit = styled.button`
     background-color: ${(props: IProps) => (props.isValid ? "yellow" : "red")};
+    width: 179px;
+    height: 52px;
 `
 
 export default function SubmitButton (props){

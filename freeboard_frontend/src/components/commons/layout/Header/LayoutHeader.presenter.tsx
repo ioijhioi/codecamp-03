@@ -7,6 +7,7 @@ import {
   LoginInformation,
   LoginButton,
   CreateButton,
+  MyPicture,
   // ADVBox,
 } from "./LayoutHeader.styles";
 
@@ -25,9 +26,22 @@ export default function LayoutHeaderUI(props: any) {
         <LoginInformation>
           {!props.accessToken && (
             <>
-              <LoginButton onClick={props.onClickMoveToLoginPage}>로그인 </LoginButton>
+              <LoginButton onClick={props.onClickMoveToLoginPage}>LOGIN </LoginButton>
               <>|</>
               <CreateButton onClick={props.onClickMoveToCreateUserPage}>회원가입</CreateButton>
+            </>
+          )}
+          {props.accessToken && (
+            <>
+              <MyPicture
+                src={
+                  props.data?.fetchUserLoggedIn.picutre
+                    ? `http://storage.googleapis.com/${props.data?.fetchUserLoggedIn.picture}`
+                    : "/images/layout/mypicture.png"
+                }
+                onClick={props.onClickMoveToMyPage}
+              />
+              <LoginButton onClick={props.onClickMoveToLogout}>LOGOUT </LoginButton>
             </>
           )}
         </LoginInformation>
