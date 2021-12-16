@@ -2,7 +2,7 @@ import {
   Wrapper, 
   // Header,
   Button,
-  HeaderSearch,
+  // HeaderSearch,
   LogoBox,
   LoginInformation,
   LoginButton,
@@ -19,10 +19,10 @@ export default function LayoutHeaderUI(props: any) {
         <Button>
           <LogoBox src="/images/layout/logo.png/"/>
         </Button>
-        <HeaderSearch
+        {/* <HeaderSearch
           type="text"
           placeholder="검색하기"
-        />
+        /> */}
         <LoginInformation>
           {!props.accessToken && (
             <>

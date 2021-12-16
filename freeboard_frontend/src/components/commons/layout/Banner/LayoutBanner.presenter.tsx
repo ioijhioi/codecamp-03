@@ -15,7 +15,7 @@ export default function LayoutBannerUI() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2000,
     
   };
 
@@ -23,13 +23,13 @@ export default function LayoutBannerUI() {
     <Wrapper>
       <Slider {...settings}>
         <div>
-          <SliderItem src="/images/layout/camping2.jpg" />
+          <SliderItem src="/images/layout/camping002.jpg" />
         </div>
         <div>
-          <SliderItem src="/images/layout/camping1.jpg" />
+          <SliderItem src="/images/layout/camping003.jpg" />
         </div>
         <div>
-          <SliderItem src="/images/layout/0429_캠핑_12.jpg" />
+          <SliderItem src="/images/layout/camping004.jpg" />
         </div>
       </Slider>
     </Wrapper>
