@@ -19,6 +19,9 @@ export default function LayoutNavigationUI(props: ILayoutNavigationUIProps) {
       <MenuItem id="/mypages" onClick={props.onClickMenu}>
         마이 페이지
       </MenuItem>
+      <MenuItem id="/iframe" onClick={props.onClickMenu}>
+        마이 페이지
+      </MenuItem>
     </Wrapper>
   );
 }

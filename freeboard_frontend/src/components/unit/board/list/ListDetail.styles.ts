@@ -8,48 +8,60 @@ export const Wrapper = styled.div`
 
 export const TopWrapper = styled.div`
   /* background-color: red; */
-`;
-export const TopHeader = styled.div`
-  background-color: #14539a;
-  text-align: center;
-  font-size: 36px;
+  margin-bottom: 15px;
 `;
 
-export const TopBody = styled.div`
-  /* background-color: red; */
-`;
+export const Title = styled.text`
+  font-size: 25px;
+`
+// export const TopHeader = styled.div`
+//   background-color: #14539a;
+//   text-align: center;
+//   font-size: 36px;
+// `;
 
-export const BestBox = styled.div`
-  background-color: yellow;
-  width: 287px;
-  height: 257px;
-`;
+// export const TopBody = styled.div`
+//   /* background-color: red; */
+// `;
+
+// export const BestBox = styled.div`
+//   background-color: yellow;
+//   width: 287px;
+//   height: 257px;
+// `;
 
 export const BottonWrapper = styled.div`
   /* background-color: red; */
 `;
 export const BottonHeader = styled.div`
   /* background-color: red; */
-`;
-
-export const InputBottonWrapper = styled.div`
-  width: 776px;
-  height: 52px;
   display:flex;
-  flex-direction: row;
-  justify-content: center;
+  justify-content: flex-end;
+
 `;
+
+// export const InputBottonWrapper = styled.div`
+//   width: 650px;
+//   height: 40px;
+//   display:flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   background-color: blue;
+// `;
 export const Search = styled.input`
+  display:flex;
   background-color: #F2F2F2;
-  width: 776px;
-  height: 52px;
+  width: 650px;
+  height: 40px;
+  margin-right:30px;
+  border-radius: 8px;
   
 `;
 
-export const SearchButton = styled.div`
+export const SearchButton = styled.button`
   
-  padding: 14px 16px;
-  background-color: gray;
+  
+  background-color: white;
   width: 120px;
 `
 

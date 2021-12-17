@@ -1,9 +1,10 @@
 import {
   Wrapper,
   TopWrapper,
-  TopHeader,
-  TopBody,
-  BestBox,
+  Title,
+  // TopHeader,
+  // TopBody,
+  // BestBox,
   BottonWrapper,
   BottonHeader,
   InputBottonWrapper,
@@ -29,23 +30,19 @@ export default function ListDetailUI(props) {
   return (
     <Wrapper>
       <TopWrapper>
-        <TopHeader>베스트 게시글</TopHeader>
-        <TopBody>
-          <BestBox>tkdwk</BestBox>
-          <div></div>
-          <div></div>
-          <div></div>
-        </TopBody>
+        <Title>
+          자유게시판
+        </Title>
       </TopWrapper>
       <BottonWrapper>
         <BottonHeader>
-          <InputBottonWrapper>
+          {/* <InputBottonWrapper> */}
             <Search 
               type="text" 
-              placeholder="🔎제목을 검색해주세요"
+              placeholder="제목을 검색해주세요"
               onChange={props.onChangeSearch}/>
             <SearchButton onClick={props.onClickSearch}>검색하기 </SearchButton>
-          </InputBottonWrapper>
+          {/* </InputBottonWrapper> */}
         </BottonHeader>
         <BottonBody>
           {/* <Searches01 ></Searches01> */}
