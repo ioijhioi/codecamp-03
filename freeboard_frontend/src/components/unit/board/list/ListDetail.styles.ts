@@ -9,10 +9,12 @@ export const Wrapper = styled.div`
 export const TopWrapper = styled.div`
   /* background-color: red; */
   margin-bottom: 15px;
+  border-bottom: 1px solid #bdbdbd;
 `;
 
 export const Title = styled.text`
   font-size: 25px;
+  
 `
 // export const TopHeader = styled.div`
 //   background-color: #14539a;
@@ -51,18 +53,24 @@ export const BottonHeader = styled.div`
 export const Search = styled.input`
   display:flex;
   background-color: #F2F2F2;
-  width: 650px;
+  width: 200px;
   height: 40px;
-  margin-right:30px;
+  margin-right:10px;
   border-radius: 8px;
   
 `;
 
 export const SearchButton = styled.button`
-  
-  
   background-color: white;
   width: 120px;
+  height:40px;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  :hover {
+    color: orange;
+  }
 `
 
 export const BottonBody = styled.div`

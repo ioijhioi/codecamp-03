@@ -1,11 +1,14 @@
 import {
     Wrapper,
     
-    BestProduct,
+    // BestProduct,
     ProductName,
     // ProductWrapper,
     SellingProduct,
     SoldProduct,
+    BottonHeader,
+    Search,
+    SearchButton,
     Row,
     Images,
     ImagesNone,
@@ -27,10 +30,18 @@ export default function ProductListUI (props) {
     return (
         <Wrapper>
            
-            <BestProduct/>
+            {/* <BestProduct/> */}
             <ProductName>
                 <SellingProduct> 판매중상품 </SellingProduct>
                 <SoldProduct>판매된상품</SoldProduct>
+                <BottonHeader>
+                    <Search 
+                        type="text" 
+                        placeholder="제목을 검색해주세요"
+                        onChange={props.onChangeSearch}/>
+                    <SearchButton onClick={props.onClickSearch}>검색하기 </SearchButton>
+                </BottonHeader>
+
             </ProductName>
             
       

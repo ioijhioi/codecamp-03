@@ -15,12 +15,12 @@ export const Wrapper = styled.div`
 
 
 
-export const BestProduct = styled.div`
-    width: 282px;
-    height: 391px;
-    background-color: skyblue;
-    margin-bottom: 50px;
-`
+// export const BestProduct = styled.div`
+//     width: 282px;
+//     height: 391px;
+//     background-color: skyblue;
+//     margin-bottom: 50px;
+// `
 
 export const ProductName = styled.div `
     width: 100%;
@@ -28,6 +28,7 @@ export const ProductName = styled.div `
     /* background-color: blue; */
     display: flex;
     border-bottom: 1px solid #bdbdbd;
+    justify-content: space-between;
 `
 
 
@@ -35,6 +36,35 @@ export const ProductName = styled.div `
 export const SellingProduct =styled.div`
 `
 export const SoldProduct = styled.div`
+`
+export const BottonHeader = styled.div`
+  /* background-color: red; */
+  display:flex;
+  justify-content: flex-end;
+
+`;
+export const Search = styled.input`
+  display:flex;
+  background-color: #F2F2F2;
+  width: 200px;
+  height: 40px;
+  margin-right:10px;
+  border-radius: 8px;
+  border: 1px;
+  
+`;
+export const SearchButton = styled.button`
+  background-color: #F2F2F2;
+  width: 120px;
+  height:40px;
+  border-radius: 8px;
+  border: 1px;
+
+  cursor: pointer;
+
+  :hover {
+    color: orange;
+  }
 `
 
 export const Row = styled.div`
