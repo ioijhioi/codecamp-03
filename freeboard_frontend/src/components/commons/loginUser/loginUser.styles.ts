@@ -3,11 +3,11 @@ import styled from '@emotion/styled';
 export const Wrapper = styled.div`
     width: 1200px;
     
-    /* background-color: blue; */
+    background-color: blue;
     display: flex;
     flex-direction: column;
     align-items:center;
-    padding-top: 50px;
+    margin-top:30px;
 `
 export const Header = styled.div`
     display: flex;
