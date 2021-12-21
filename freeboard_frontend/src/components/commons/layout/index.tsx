@@ -7,14 +7,16 @@ import LayoutFooter from "./Footer/LayoutFooter.container"
 
 const SidebarWrapper = styled.div`
   display:flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   height: 100%;
+  align-items:center;
+  /* background-color: blue; */
 `
 const Body = styled.div`
-  height: 100%;
+  /* height: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: column; */
+  /* background-color: red; */
 `;
 
 export default function Layout(props) {

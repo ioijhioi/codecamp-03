@@ -4,12 +4,13 @@ import styled from '@emotion/styled';
 export const Wrapper = styled.div`
     width: 1200px;
     /* background-color: skyblue; */
-    display:flex;
+    /* display:flex;
     align-items: center;
     flex-direction: column;
     margin-top: 50px;
     padding-top: 80px;
-    border-top: 1px solid  #bdbdbd;
+    border-top: 1px solid  #bdbdbd; */
+    margin: 100px;
 `
 
 

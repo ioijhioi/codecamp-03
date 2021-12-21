@@ -24,7 +24,7 @@ export default function LayoutFooterUI () {
                    CopyRight @anywHERE . All Rights Reserved.
             </CenterFooter>
             <RightFooter>
-                ----------------------------    
+                ----------------------------------    
             </RightFooter>
         </Wrapper>
     )
