@@ -7,8 +7,8 @@ export const Wrapper = styled.div`
     padding: 0 30px; */
     display: flex;
     flex-direction: column;
-    box-shadow: 0px 0px 10px gray;
-    margin-top: 50px;
+    /* box-shadow: 0px 0px 10px gray; */
+    margin: 100px;
 `
 
 export const Header = styled.div`
@@ -30,8 +30,8 @@ export const Map = styled.img`
     
 `
 
-export const LocationList = styled.div`
-    width: 300px;
-    height: 1200px;
-    background-color: yellow;
-`
+// export const LocationList = styled.div`
+//     width: 300px;
+//     height: 1200px;
+//     background-color: yellow;
+// `

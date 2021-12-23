@@ -3,7 +3,7 @@ import {
     Header,
     Body,
     Map,
-    LocationList,
+    // LocationList,
 } from "./MapWrite.styles"
 
 
@@ -18,7 +18,7 @@ export default function MapWriteUI(props){
                 <Map src={props.bearImage} >
                     
                 </Map>
-                <LocationList>새로고침</LocationList>
+                {/* <LocationList>새로고침</LocationList> */}
             </Body>
         </Wrapper>
 
