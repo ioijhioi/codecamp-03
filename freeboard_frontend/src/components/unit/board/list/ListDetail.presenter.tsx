@@ -25,12 +25,20 @@ import {
 import Paginations01 from '../../../commons/Paginations/01/Pagination01.container';
 // import Searches01 from '../../../commons/searches/01/Searches01.presenter'
 import {v4 as uuidv4} from 'uuid'
+import { useEffect } from 'react';
 
 export default function ListDetailUI(props) {
+
+  useEffect(() => {
+  document.getElementById('freeboard').scrollIntoView({ behavior: 'smooth' });
+},[]);
+
   return (
     <Wrapper>
       <TopWrapper>
-        <Title>
+        <Title
+          id="freeboard"
+        >
           자유게시판
         </Title>
       </TopWrapper>
