@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   border: none;
-  box-shadow: 0px 0px 10px gray;
+  /* box-shadow: 0px 0px 10px gray; */
 `;
 
 export const Title = styled.div`
@@ -28,7 +28,7 @@ export const WriterWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   padding-top: 40px;
-  background-color:red;
+  /* background-color:red; */
 `;
 
 export const Writer = styled.input`
@@ -53,14 +53,14 @@ export const Label = styled.div`
 
 export const InputWrapper = styled.div`
   padding-top: 40px;
-  background-color:skyblue;
+  /* background-color:skyblue; */
 `;
 
 export const Subject = styled.input`
   width: 996px;
   height: 52px;
   padding-left: 16px;
-  /* border: 1px solid #bdbdbd; */
+  border: 1px solid #bdbdbd;
 `;
 
 export const Contents = styled.textarea`

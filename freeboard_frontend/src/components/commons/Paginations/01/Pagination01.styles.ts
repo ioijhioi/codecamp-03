@@ -8,6 +8,7 @@ interface IPageProps {
   isActive?: boolean;
 }
 export const Page = styled.span`
+  /* background-color: blue; */
   margin: 0px 10px;
   color: ${(props: IPageProps) => (props.isActive ? "blue" : "black")};
   font-weight: ${(props: IPageProps) => (props.isActive ? "bold" : "normal")};

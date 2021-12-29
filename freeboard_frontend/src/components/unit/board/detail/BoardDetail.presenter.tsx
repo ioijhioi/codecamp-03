@@ -37,7 +37,7 @@ export default function BoardDetailUI(props) {
             <Images src="/images/vector.png" />
             <Information>
               <Writer>{props.data?.fetchBoard.writer}</Writer>
-              <CreatedAt>{props.data?.fetchBoard.createdAt}</CreatedAt>
+              <CreatedAt>{props.data?.fetchBoard.createdAt.slice(0, 10)}</CreatedAt>
             </Information>
           </HeadLeft>
           <HeadRight>

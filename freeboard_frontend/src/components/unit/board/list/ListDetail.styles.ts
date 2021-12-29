@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import {ITextTokenProps} from "./ListDetail.types"
 
 export const Wrapper = styled.div`
   //background-color:
@@ -95,11 +96,9 @@ export const ColumnHeaderTitle = styled.div`
   text-align: center;
 `;
 
-interface Props {
-  isMatched: boolean;
-}
-export const Myword = styled.span`
-  color: ${((props: Props) => (props.isMatched ? "red" : "black"))};
+
+export const TextToken = styled.span`
+  color: ${(props: ITextTokenProps) => (props.isMatched ? "red" : "black")};
 `
 
 // const Page = styled.span`
@@ -123,6 +122,7 @@ export const Row = styled.div`
 // `
 export const BottonFoot = styled.div`
   /* background-color: red; */
+  
 `;
 
 export const PencilIcon = styled.img``;

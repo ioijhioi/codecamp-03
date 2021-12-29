@@ -16,7 +16,7 @@ import {
   ColumnHeaderBasic,
   ColumnHeaderTitle,
   // Page,
-  Myword,
+  TextToken,
   Row,
   BottonFoot,
   PencilIcon,
@@ -69,12 +69,12 @@ export default function ListDetailUI(props) {
                   onClick={props.onClickMoveToBoardDetail}
                 >
                   {el.title
-                    .replaceAll(props.myKeyword, `$#@${props.myKeyword}$#@`)
-                    .split("$#@")
+                    .replaceAll(props.myKeyword, `@#$%${props.myKeyword}@#$%`)
+                    .split("@#$%")
                     .map ((el) => (
-                        <Myword key={uuidv4()} isMatched={props.myKeyword === el} > 
+                        <TextToken key={uuidv4()} isMatched={props.myKeyword === el} > 
                             {el} 
-                        </Myword>)
+                        </TextToken>)
                     )}
                 </ColumnHeaderTitle>
                 <ColumnHeaderBasic>{el.writer}</ColumnHeaderBasic>

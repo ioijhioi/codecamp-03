@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Wrapper1 = styled.div`
-   border: 1px solid black;
+   /* border: 1px solid black; */
   padding-top: 80px;
   padding-bottom: 100px;
   padding-left: 102px;
@@ -21,7 +21,7 @@ export const Wrapper1 = styled.div`
   flex-direction: column;
   align-items: center;
   border: none;
-  box-shadow: 0px 0px 10px gray;
+  /* box-shadow: 0px 0px 10px gray; */
 `;
 
 export const Wrapper1Head = styled.div`
@@ -35,7 +35,7 @@ export const Wrapper1Head = styled.div`
 `;
 
 export const HeadLeft = styled.div`
-  border: 1px solid black;
+  /* border: 1px solid black; */
     width : 498px;
     height: 60px;
     

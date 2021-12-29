@@ -26,9 +26,13 @@ import {
 import {Modal} from "antd"
 import DaumPostcode from 'react-daum-postcode';
 import Uploads01 from "../../../commons/uploads/01-board/Uploads01.container"
-
+import { useEffect } from 'react';
 
 export default function BoardWriteUI(props) {
+
+  useEffect(() => {
+    document.getElementById('boardwrite').scrollIntoView({ behavior: 'smooth' });
+  },[]);
   return (
     <>
       {props.isOpen && (
@@ -38,7 +42,9 @@ export default function BoardWriteUI(props) {
         </Modal>
       )}  
       <Wrapper>
-        <Title>{props.isEdit ? "게시판 수정" : "게시판 등록"}</Title>
+        <Title
+          id="boardwrite"
+        >{props.isEdit ? "게시판 수정" : "게시판 등록"}</Title>
         <WriterWrapper>
           <InputWrapper>
             <Label>작성자</Label>
