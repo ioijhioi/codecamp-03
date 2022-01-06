@@ -3,14 +3,14 @@ import styled from '@emotion/styled';
 export const Wrapper = styled.div`
     width: 1200px;
     height: 1200px;
-    background-color: skyblue;
+    /* background-color: skyblue; */
     display:flex;
     flex-direction: column;
     align-items: center;
 
 `
 export const Header = styled.div`
-    background-color: green;
+    /* background-color: green; */
     width: 104px;
     height: 40px;
     top: 0px;
@@ -23,13 +23,13 @@ export const Header = styled.div`
 export const Body = styled.div`
     width: 384px;
     height: 664px;
-    background-color:green;
+    /* background-color:green; */
     
 `
 
 export const InputWrapper = styled.div`
     padding-top: 10px;
-    background-color: gray;
+    /* background-color: gray; */
 `
 
 export const Label = styled.div`
@@ -41,9 +41,9 @@ export const Email = styled.input`
     
     border: 1px solid  #FFFFFF;
     box-sizing: border-box;
-    border-radius: 16px;
+    border-radius: 10px;
     margin-top: 10px;
-    background-color: white;
+    background-color: #EFEFEF;
 `
 export const Writer = styled.input`
     width: 384px;
@@ -53,7 +53,7 @@ export const Writer = styled.input`
     box-sizing: border-box;
     border-radius: 16px;
     margin-top: 10px;
-    background-color: white;
+    background-color: #EFEFEF;
 `
 
 export const Password = styled.input`
@@ -64,7 +64,7 @@ export const Password = styled.input`
     box-sizing: border-box;
     border-radius: 16px;
     margin-top: 10px;
-    background-color: white;
+    background-color: #EFEFEF;
 `
 
 export const SubmitButton = styled.button`

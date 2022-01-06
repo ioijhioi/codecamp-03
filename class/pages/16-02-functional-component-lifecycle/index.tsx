@@ -36,7 +36,7 @@ export default function FunctionalComponentLifecycle (){
         // count를 써주면 무한루프에 빠진다
 
        
-        function onClickCount(){
+        function onClickCount(){                                                                 
             setCount((prev) => prev + 1)
         }
         function onClickMove(){

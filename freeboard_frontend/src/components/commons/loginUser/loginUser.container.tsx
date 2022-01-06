@@ -24,6 +24,9 @@ export default function LoginUser () {
         setMyPassword(event.target.value)
 
     }
+    function onClickMoveToCreateUserPage (){
+        router.push("/createUser")
+      }
 
     async function onClickLogin(){
         const result =  await loginUser({
@@ -44,6 +47,7 @@ export default function LoginUser () {
             onChangeEmail={onChangeEmail}
             onChangePassword={onChangePassword}
             onClickLogin={onClickLogin}
+            onClickMoveToCreateUserPage={onClickMoveToCreateUserPage}
         />
     )
 }

@@ -43,11 +43,8 @@ export default function LoginUserPageUI (props) {
                 </Login>
             </Body>
             <Footer>
-                <LoginItem>이메일찾기</LoginItem>
-                <>|</>
-                <LoginItem>비밀번호 찾기</LoginItem>
-                <>|</>
-                <LoginItem>회원가입</LoginItem>
+                회원가입이 안되어 있나요?
+                <LoginItem onClick={props.onClickMoveToCreateUserPage}>회원가입하기</LoginItem>
             </Footer>
         </Wrapper>
     )
